@@ -1,0 +1,108 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# RationalTimeExtensions
+
+class in Unity.IntegerTime
+
+/
+
+Implemented in:[UnityEngine.CoreModule](UnityEngine.CoreModule.html)
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Extension method operations for RationalTime.
+
+All binary operations throw exceptions if the rates for 2 operands do not
+match.
+
+### Static Methods
+
+[Add](Unity.IntegerTime.RationalTimeExtensions.Add.html)| Adds two Rational
+Times together.  
+---|---  
+[Convert](Unity.IntegerTime.RationalTimeExtensions.Convert.html)| Converts a
+RationalTime from one rate to another. This is lossless unless it triggers an
+overflow.  
+[Divide](Unity.IntegerTime.RationalTimeExtensions.Divide.html)| Divides a
+RationalTime by another.  
+[IsValid](Unity.IntegerTime.RationalTimeExtensions.IsValid.html)| Validity
+check.  
+[Multiply](Unity.IntegerTime.RationalTimeExtensions.Multiply.html)| Multiplies
+two Rational Times together.  
+[Subtract](Unity.IntegerTime.RationalTimeExtensions.Subtract.html)| Subtracts
+a RationalTime from another.  
+[ToDouble](Unity.IntegerTime.RationalTimeExtensions.ToDouble.html)| Converts
+the data type to Double.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

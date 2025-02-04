@@ -1,0 +1,102 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# UnityEngine.UIModule
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+The UI module implements basic components required for Unity's UI system
+
+### Classes
+
+[Canvas](Canvas.html)| Element that can be used for screen rendering.  
+---|---  
+[CanvasGroup](CanvasGroup.html)| A Canvas placable element that can be used to
+modify children Alpha, Raycasting, Enabled state.  
+[CanvasRenderer](CanvasRenderer.html)| A component that will render to the
+screen after all normal rendering has completed when attached to a Canvas.
+Designed for GUI application.  
+[RectTransformUtility](RectTransformUtility.html)| Utility class containing
+helper methods for working with RectTransform.  
+  
+### Enumerations
+
+[AdditionalCanvasShaderChannels](AdditionalCanvasShaderChannels.html)| Enum
+mask of possible shader channel properties that can also be included when the
+Canvas mesh is created.  
+---|---  
+[RenderMode](RenderMode.html)| RenderMode for the Canvas.  
+[StandaloneRenderResize](StandaloneRenderResize.html)| Enum used to determine
+if a Canvas should be resized when a manual Camera.Render call is performed.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+
