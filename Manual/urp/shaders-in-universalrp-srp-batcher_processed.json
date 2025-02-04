@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\urp\\shaders-in-universalrp-srp-batcher.html",
+  "chunks": [
+    "Unity - Manual: Make a URP shader compatible with the SRP Batcher Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Materials and shaders Shaders Shaders in URP Writing custom shaders in URP Make a URP shader compatible with the SRP Batcher ShaderLab Pass tags in URP reference Shader Material Inspector window reference for URP Make a URP shader compatible with the SRP Batcher To ensure that a Shader A program that runs on the GPU. More info See in Glossary is SRP Batcher compatible: Declare all Material properties in a single CBUFFER called UnityPerMaterial . Declare all built-in engine properties, such as unity_ObjectToWorld or unity_WorldTransformParams , in a single CBUFFER called UnityPerDraw . For more information on the SRP Batcher, refer to the documentation on the Scriptable Render Pipeline (SRP) Batcher . ShaderLab Pass",
+    "tags in URP reference Shader Material Inspector window reference for URP Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

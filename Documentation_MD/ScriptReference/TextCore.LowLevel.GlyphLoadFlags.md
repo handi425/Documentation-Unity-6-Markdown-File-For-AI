@@ -1,0 +1,111 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# GlyphLoadFlags
+
+enumeration
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+The various options (flags) used by the FontEngine when loading glyphs from a
+font face.
+
+### Properties
+
+[LOAD_DEFAULT](TextCore.LowLevel.GlyphLoadFlags.LOAD_DEFAULT.html)| Load glyph
+metrics and bitmap representation if available for the current face size.  
+---|---  
+[LOAD_NO_SCALE](TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_SCALE.html)| Load
+glyphs at default font units without scaling. This flag implies
+LOAD_NO_HINTING and LOAD_NO_BITMAP and unsets LOAD_RENDER.  
+[LOAD_NO_HINTING](TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_HINTING.html)| Load
+glyphs without hinting.  
+[LOAD_RENDER](TextCore.LowLevel.GlyphLoadFlags.LOAD_RENDER.html)| Load glyph
+metrics and render outline using 8-bit or antialiased image of the glyph.  
+[LOAD_NO_BITMAP](TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_BITMAP.html)| Load
+glyphs and ignore embedded bitmap strikes.  
+[LOAD_FORCE_AUTOHINT](TextCore.LowLevel.GlyphLoadFlags.LOAD_FORCE_AUTOHINT.html)|
+Load glyphs using the auto hinter instead of the font's native hinter.  
+[LOAD_MONOCHROME](TextCore.LowLevel.GlyphLoadFlags.LOAD_MONOCHROME.html)| Load
+glyph metrics and render outline using 1-bit monochrome.  
+[LOAD_NO_AUTOHINT](TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_AUTOHINT.html)|
+Load glyphs using the font's native hinter.  
+[LOAD_COLOR](TextCore.LowLevel.GlyphLoadFlags.LOAD_COLOR.html)| Load glyph
+metrics and render using color bitmaps.  
+[LOAD_COMPUTE_METRICS](TextCore.LowLevel.GlyphLoadFlags.LOAD_COMPUTE_METRICS.html)|
+Load glyph metrics without using the 'hdmx' table. This flag is mostly used to
+validate font data.  
+[LOAD_BITMAP_METRICS_ONLY](TextCore.LowLevel.GlyphLoadFlags.LOAD_BITMAP_METRICS_ONLY.html)|
+Load glyph metrics without allocating and loading the bitmap data.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

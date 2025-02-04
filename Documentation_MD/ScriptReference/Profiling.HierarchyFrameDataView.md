@@ -1,0 +1,351 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# HierarchyFrameDataView
+
+class in UnityEditor.Profiling
+
+/
+
+Inherits from:[Profiling.FrameDataView](Profiling.FrameDataView.html)
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Provides access to the Profiler data for a specific frame and thread.
+
+Use _HierarchyFrameDataView_ to retrieve Profiler samples structured as a
+hierarchy.  
+This is used in the **Hierachy mode** of the [CPU Usage
+Profiler](../Manual/ProfilerCPU.html), for example.  
+  
+The _HierarchyFrameDataView_ aggregates the data with time and memory
+information. Each hierarchy item includes accumulated data of its children.
+
+    
+    
+    using [System](Rendering.VirtualTexturing.System.html);
+    using System.Collections.Generic;
+    using UnityEditor.Profiling;
+    using UnityEditorInternal;  
+      
+    public class Example
+    {
+        List<int> parentsCacheList = new List<int>();
+        List<int> childrenCacheList = new List<int>();  
+      
+        public void ProcessFrameData(int frame)
+        {
+            using (var frameData = ProfilerDriver.GetHierarchyFrameDataView(frame, 0, [HierarchyFrameDataView.ViewModes.Default](Profiling.HierarchyFrameDataView.ViewModes.Default.html), [HierarchyFrameDataView.columnGcMemory](Profiling.HierarchyFrameDataView-columnGcMemory.html), false))
+            {
+                int rootId = frameData.GetRootItemID();
+                frameData.GetItemDescendantsThatHaveChildren(rootId, parentsCacheList);
+                foreach (int parentId in parentsCacheList)
+                {
+                    frameData.GetItemChildren(parentId, childrenCacheList);
+                    // Process further records
+                }
+            }
+        }
+    }
+    
+
+### Static Properties
+
+[columnCalls](Profiling.HierarchyFrameDataView-columnCalls.html)| The Calls
+column.  
+---|---  
+[columnDontSort](Profiling.HierarchyFrameDataView-columnDontSort.html)| The
+column identifier that indicates whether sorting is disabled.  
+[columnGcMemory](Profiling.HierarchyFrameDataView-columnGcMemory.html)| The
+amount of managed allocations within a sample.  
+[columnName](Profiling.HierarchyFrameDataView-columnName.html)| The Profiler
+Sample Name column.  
+[columnObjectName](Profiling.HierarchyFrameDataView-columnObjectName.html)|
+The Object Name column.  
+[columnSelfPercent](Profiling.HierarchyFrameDataView-columnSelfPercent.html)|
+The percentage of the CPU time Unity spends in a sample itself, excluding the
+time from child samples.  
+[columnSelfTime](Profiling.HierarchyFrameDataView-columnSelfTime.html)| The
+CPU time in milliseconds that Unity spends in a sample itself, excluding the
+time from child samples.  
+[columnStartTime](Profiling.HierarchyFrameDataView-columnStartTime.html)| The
+start time of a call in milliseconds.  
+[columnTotalPercent](Profiling.HierarchyFrameDataView-
+columnTotalPercent.html)| The percentage of the CPU time Unity spends in a
+sample, including the time from child samples.  
+[columnTotalTime](Profiling.HierarchyFrameDataView-columnTotalTime.html)| The
+CPU time in milliseconds that Unity spends in a sample, including the time
+from child samples.  
+[columnWarningCount](Profiling.HierarchyFrameDataView-
+columnWarningCount.html)| The amount of samples that are inside a code
+execution path that is suboptimal for performance.  
+[invalidSampleId](Profiling.HierarchyFrameDataView-invalidSampleId.html)|
+Index of the invalid item.  
+  
+### Properties
+
+[sortColumn](Profiling.HierarchyFrameDataView-sortColumn.html)| The column
+identifier that defines the sort column.  
+---|---  
+[sortColumnAscending](Profiling.HierarchyFrameDataView-
+sortColumnAscending.html)| Whether the sorting order is ascending, true, or
+descending, false.  
+[viewMode](Profiling.HierarchyFrameDataView-viewMode.html)| The view mode
+which defines how data is aggregated.  
+  
+### Public Methods
+
+[GetItemAncestors](Profiling.HierarchyFrameDataView.GetItemAncestors.html)|
+Retrieves a list of hierarchy item ancestors.  
+---|---  
+[GetItemCallstack](Profiling.HierarchyFrameDataView.GetItemCallstack.html)|
+Gets the callstack associated with the specified hierarchy item.  
+[GetItemCategoryIndex](Profiling.HierarchyFrameDataView.GetItemCategoryIndex.html)|
+Gets Profiler marker category for the specific marker identifier.  
+[GetItemChildren](Profiling.HierarchyFrameDataView.GetItemChildren.html)|
+Retrieves a list of hierarchy item children.  
+[GetItemColumnData](Profiling.HierarchyFrameDataView.GetItemColumnData.html)|
+Returns string representation of hierarchy item value associated with the
+column.  
+[GetItemColumnDataAsDouble](Profiling.HierarchyFrameDataView.GetItemColumnDataAsDouble.html)|
+Returns double representation of hierarchy item value associated with the
+column.  
+[GetItemColumnDataAsFloat](Profiling.HierarchyFrameDataView.GetItemColumnDataAsFloat.html)|
+Returns float representation of hierarchy item value associated with the
+column.  
+[GetItemColumnDataAsSingle](Profiling.HierarchyFrameDataView.GetItemColumnDataAsSingle.html)|
+Returns float representation of hierarchy item value associated with the
+column.  
+[GetItemDepth](Profiling.HierarchyFrameDataView.GetItemDepth.html)| Returns
+hierarchy level of the item.  
+[GetItemDescendantsThatHaveChildren](Profiling.HierarchyFrameDataView.GetItemDescendantsThatHaveChildren.html)|
+Use to retrieve a list of a hierarchy item descendants which have other
+children.  
+[GetItemInstanceID](Profiling.HierarchyFrameDataView.GetItemInstanceID.html)|
+Returns InstanceID of the UnityEngine.Object associated with the sample.  
+[GetItemMarkerFlags](Profiling.HierarchyFrameDataView.GetItemMarkerFlags.html)|
+Use to retrieve a marker usage flags.  
+[GetItemMarkerID](Profiling.HierarchyFrameDataView.GetItemMarkerID.html)|
+Returns Profiler marker which uniquely identifies sample name.  
+[GetItemMarkerIDPath](Profiling.HierarchyFrameDataView.GetItemMarkerIDPath.html)|
+Use to retrieve a list of a marker identifiers of all hierarchy item parents.  
+[GetItemMergedSampleCallstack](Profiling.HierarchyFrameDataView.GetItemMergedSampleCallstack.html)|
+Gets the callstack associated with the specified hierarchy item.  
+[GetItemMergedSamplesColumnData](Profiling.HierarchyFrameDataView.GetItemMergedSamplesColumnData.html)|
+Use to retrieve a values of merged samples of a hierarchy item.  
+[GetItemMergedSamplesColumnDataAsDoubles](Profiling.HierarchyFrameDataView.GetItemMergedSamplesColumnDataAsDoubles.html)|
+Retrieves the merged samples for a specific hierarchy item. Merged samples are
+returned as a list of doubles through the outValues param.  
+[GetItemMergedSamplesColumnDataAsFloats](Profiling.HierarchyFrameDataView.GetItemMergedSamplesColumnDataAsFloats.html)|
+Retrieves the merged samples for a specific hierarchy item. Merged samples are
+returned as a list of floats through the outValues param.  
+[GetItemMergedSamplesCount](Profiling.HierarchyFrameDataView.GetItemMergedSamplesCount.html)|
+Return merged samples count represented by the hierarchy item.  
+[GetItemMergedSamplesInstanceID](Profiling.HierarchyFrameDataView.GetItemMergedSamplesInstanceID.html)|
+Retrieves the instanceID of the merged samples corresponding to a hierarchy
+item.  
+[GetItemMergedSamplesMetadata](Profiling.HierarchyFrameDataView.GetItemMergedSamplesMetadata.html)|
+Returns string representation of hierarchy item metadata value.  
+[GetItemMergedSamplesMetadataAsFloat](Profiling.HierarchyFrameDataView.GetItemMergedSamplesMetadataAsFloat.html)|
+Returns float representation of hierarchy item metadata value.  
+[GetItemMergedSamplesMetadataAsLong](Profiling.HierarchyFrameDataView.GetItemMergedSamplesMetadataAsLong.html)|
+Returns long representation of hierarchy item metadata value.  
+[GetItemMergedSamplesMetadataCount](Profiling.HierarchyFrameDataView.GetItemMergedSamplesMetadataCount.html)|
+Returns metadata count associated with hierarchy item.  
+[GetItemMetadata](Profiling.HierarchyFrameDataView.GetItemMetadata.html)|
+Returns string representation of hierarchy item metadata value.  
+[GetItemMetadataAsFloat](Profiling.HierarchyFrameDataView.GetItemMetadataAsFloat.html)|
+Returns float representation of hierarchy item metadata value.  
+[GetItemMetadataAsLong](Profiling.HierarchyFrameDataView.GetItemMetadataAsLong.html)|
+Returns long representation of hierarchy item metadata value.  
+[GetItemMetadataCount](Profiling.HierarchyFrameDataView.GetItemMetadataCount.html)|
+Returns metadata count associated with hierarchy item.  
+[GetItemName](Profiling.HierarchyFrameDataView.GetItemName.html)| Gets the
+sample name associated with the item.  
+[GetItemPath](Profiling.HierarchyFrameDataView.GetItemPath.html)| Retrieves
+the hierarchy item path as a string. Each level is delimited by forward
+slashes ('/').  
+[GetItemRawFrameDataViewIndices](Profiling.HierarchyFrameDataView.GetItemRawFrameDataViewIndices.html)|
+Retrieves the raw indices of all samples associated with this Hierarchy item
+identifier.  
+[GetRootItemID](Profiling.HierarchyFrameDataView.GetRootItemID.html)| Gets the
+identifier for the root tree item.  
+[HasItemChildren](Profiling.HierarchyFrameDataView.HasItemChildren.html)|
+Checks whether the tree item has children.  
+[ItemContainsRawFrameDataViewIndex](Profiling.HierarchyFrameDataView.ItemContainsRawFrameDataViewIndex.html)|
+Checks if the provided raw sample index matches any of the raw sample indices
+associated with this Hierarchy item identifier.  
+[ResolveItemCallstack](Profiling.HierarchyFrameDataView.ResolveItemCallstack.html)|
+Gets the callstack associated with the specified hierarchy item.  
+[ResolveItemMergedSampleCallstack](Profiling.HierarchyFrameDataView.ResolveItemMergedSampleCallstack.html)|
+Gets the callstack associated with a specific item sample.  
+[Sort](Profiling.HierarchyFrameDataView.Sort.html)| Sorts the hierarchy view.  
+  
+### Inherited Members
+
+### Static Properties
+
+[invalidMarkerId](Profiling.FrameDataView-invalidMarkerId.html)| Identifier of
+the invalid marker.  
+---|---  
+[invalidThreadId](Profiling.FrameDataView-invalidThreadId.html)| This constant
+defines a thread id that does not match any valid thread's id.  
+[invalidThreadIndex](Profiling.FrameDataView-invalidThreadIndex.html)| This
+constant defines a thread index that does not match any valid thread's index.  
+  
+### Properties
+
+[frameFps](Profiling.FrameDataView-frameFps.html)| The current frames per
+second (FPS) for the frame.  
+---|---  
+[frameGpuTimeMs](Profiling.FrameDataView-frameGpuTimeMs.html)| The amount of
+GPU frame time in milliseconds.  
+[frameGpuTimeNs](Profiling.FrameDataView-frameGpuTimeNs.html)| The amount of
+GPU frame time in nanoseconds.  
+[frameIndex](Profiling.FrameDataView-frameIndex.html)| The frame index for the
+FrameDataView.  
+[frameStartTimeMs](Profiling.FrameDataView-frameStartTimeMs.html)| The start
+time of CPU frame in milliseconds.  
+[frameStartTimeNs](Profiling.FrameDataView-frameStartTimeNs.html)| The start
+time of CPU frame in nanoseconds.  
+[frameTimeMs](Profiling.FrameDataView-frameTimeMs.html)| The amount of CPU
+frame time in milliseconds.  
+[frameTimeNs](Profiling.FrameDataView-frameTimeNs.html)| The amount of CPU
+frame time in nanoseconds.  
+[maxDepth](Profiling.FrameDataView-maxDepth.html)| Maximum child samples
+levels in the thread data.  
+[sampleCount](Profiling.FrameDataView-sampleCount.html)| The amount of samples
+in the frame for the thread.  
+[threadGroupName](Profiling.FrameDataView-threadGroupName.html)| The name of
+the group that the thread belongs to.  
+[threadId](Profiling.FrameDataView-threadId.html)| Persistent identifier
+associated with the thread.  
+[threadIndex](Profiling.FrameDataView-threadIndex.html)| The index of the
+thread in the current frame.  
+[threadName](Profiling.FrameDataView-threadName.html)| Name of the thread.  
+[valid](Profiling.FrameDataView-valid.html)| True after the frame data for the
+thread is processed and ready for retrieval.  
+  
+### Public Methods
+
+[GetAllCategories](Profiling.FrameDataView.GetAllCategories.html)| Gets all
+the available Profiler Categories for the current profiling session.  
+---|---  
+[GetCategoryInfo](Profiling.FrameDataView.GetCategoryInfo.html)| Gets the
+Profiler category information for a given category ID.  
+[GetCounterValueAsDouble](Profiling.FrameDataView.GetCounterValueAsDouble.html)|
+Gets the last value of a counter marker in the frame as a double data type'.  
+[GetCounterValueAsFloat](Profiling.FrameDataView.GetCounterValueAsFloat.html)|
+Gets the last value of a counter marker in the frame as a float data type'.  
+[GetCounterValueAsInt](Profiling.FrameDataView.GetCounterValueAsInt.html)|
+Gets the last value of a counter marker in the frame as an int data type'.  
+[GetCounterValueAsLong](Profiling.FrameDataView.GetCounterValueAsLong.html)|
+Gets the last value of a counter marker in the frame as a long data type.  
+[GetCounterValuePtr](Profiling.FrameDataView.GetCounterValuePtr.html)| Gets
+unsafe pointer to the last value of a counter marker in the frame.  
+[GetFrameMetaData](Profiling.FrameDataView.GetFrameMetaData.html)| Retrieves
+metadata associated with the frame.  
+[GetFrameMetaDataCount](Profiling.FrameDataView.GetFrameMetaDataCount.html)|
+Gets the total number of metadata chunks for each id and tag pair in the
+frame.  
+[GetGfxResourceInfo](Profiling.FrameDataView.GetGfxResourceInfo.html)| Gets
+information for a given graphics resource identifier.  
+[GetMarkerCategoryIndex](Profiling.FrameDataView.GetMarkerCategoryIndex.html)|
+Gets Profiler marker category for the specific marker identifier.  
+[GetMarkerFlags](Profiling.FrameDataView.GetMarkerFlags.html)| Gets Profiler
+marker flags for the specific marker identifier.  
+[GetMarkerId](Profiling.FrameDataView.GetMarkerId.html)| Get Profiler marker
+identifier for a specific name.  
+[GetMarkerMetadataInfo](Profiling.FrameDataView.GetMarkerMetadataInfo.html)|
+Gets Profiler marker metadata information for the specific marker identifier.  
+[GetMarkerName](Profiling.FrameDataView.GetMarkerName.html)| Gets Profiler
+marker name for the specific marker identifier.  
+[GetMarkers](Profiling.FrameDataView.GetMarkers.html)| Gets all available
+markers for the current profiling session.  
+[GetSessionMetaData](Profiling.FrameDataView.GetSessionMetaData.html)|
+Retrieves the metadata of the session this frame occurred in as a NativeArray.  
+[GetSessionMetaDataCount](Profiling.FrameDataView.GetSessionMetaDataCount.html)|
+Gets the total number of metadata chunks for each id and tag pair in the
+Profiler session.  
+[GetUnityObjectInfo](Profiling.FrameDataView.GetUnityObjectInfo.html)| Gets
+the UnityEngine.Object information for a given Instance ID.  
+[GetUnityObjectNativeTypeInfo](Profiling.FrameDataView.GetUnityObjectNativeTypeInfo.html)|
+Gets native Unity type intormation.  
+[GetUnityObjectNativeTypeInfoCount](Profiling.FrameDataView.GetUnityObjectNativeTypeInfoCount.html)|
+Returns native types count in the capture.  
+[HasCounterValue](Profiling.FrameDataView.HasCounterValue.html)| Returns true
+for a marker that includes a counter in the active frame.  
+[ResolveMethodInfo](Profiling.FrameDataView.ResolveMethodInfo.html)| Returns
+method name and location information for the specified method address.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

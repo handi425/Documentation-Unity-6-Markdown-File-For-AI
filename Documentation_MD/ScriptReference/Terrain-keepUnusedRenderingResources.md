@@ -1,0 +1,98 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [Terrain](Terrain.html).keepUnusedRenderingResources
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+public bool keepUnusedRenderingResources;
+
+### Description
+
+Defines whether Unity frees per-Camera rendering resources for the Terrain
+when those resources aren't in use after a certain number of frames.
+
+By default, this property is `false`, which implies that Unity deletes these
+rendering resources from memory if the Camera they're associated with hasn't
+rendered for 100 frames. You might sometimes not want this behavior because
+the next time these resources are required (for example, when that Camera
+starts to render again), you must reallocate them, which can negatively impact
+performance. In such cases, set this property to `true` to keep those
+resources in memory unless the Camera they're associated with is destroyed.
+You can also use
+[Terrain.SetKeepUnusedCameraRenderingResources](Terrain.SetKeepUnusedCameraRenderingResources.html)
+and
+[Terrain.GetKeepUnusedCameraRenderingResources](Terrain.GetKeepUnusedCameraRenderingResources.html)
+to configure the setting for a specific Camera.  
+  
+The value is not serialized with Terrain component.
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

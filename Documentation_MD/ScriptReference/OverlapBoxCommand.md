@@ -1,0 +1,166 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# OverlapBoxCommand
+
+struct in UnityEngine
+
+/
+
+Implemented in:[UnityEngine.PhysicsModule](UnityEngine.PhysicsModule.html)
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Struct used to set up an overlap box command to be performed asynchronously
+during a job.
+
+When you use this struct to schedule a batch of overlap box commands, the
+commands are performed asynchronously. The results of the overlap box are
+written to the results buffer. Because the results are written asynchronously,
+the results buffer can't be accessed until the job is complete.  
+  
+The results for a command at index N in the command buffer are stored at index
+N * maxHits in the results buffer.  
+  
+If maxHits is larger than the actual number of results for the command the
+result buffer will contain some invalid results which did not hit anything.
+The first invalid result is identified by the collider instance ID being 0.
+The second and later invalid results are not written to the overlap box
+command so their collider instance IDs are not guaranteed to be 0. When
+iterating over the results the loop should stop when the first invalid result
+is found.  
+  
+Overlap box command also controls whether or not Trigger colliders generate a
+hit. You should adjust maxHits and result array size accordingly to store all
+hits. Use [QueryParameters](QueryParameters.html) to control hit flags.
+[QueryParameters.hitBackfaces](QueryParameters-hitBackfaces.html) and
+[QueryParameters.hitMultipleFaces](QueryParameters-hitMultipleFaces.html)
+flags are not supported and won’t have any impact on overlap results.  
+  
+Note: Only BatchQuery.ExecuteOverlapBoxJob is logged into the profiler. Query
+count information is not logged.  
+  
+Additional resources: [Physics.OverlapBox](Physics.OverlapBox.html),
+[ColliderHit](ColliderHit.html).
+
+    
+    
+    using Unity.Collections;
+    using UnityEngine;  
+      
+    public class BoxOverlap : [MonoBehaviour](MonoBehaviour.html)
+    {
+        //Print names of GameObjects inside the box
+        void BatchOverlapBox()
+        {
+            var commands = new NativeArray<[OverlapBoxCommand](OverlapBoxCommand.html)>(1, [Allocator.TempJob](Unity.Collections.Allocator.TempJob.html));
+            var results = new NativeArray<[ColliderHit](ColliderHit.html)>(3, [Allocator.TempJob](Unity.Collections.Allocator.TempJob.html));  
+      
+            commands[0] = new [OverlapBoxCommand](OverlapBoxCommand.html)([Vector3.zero](Vector3-zero.html), [Vector3.one](Vector3-one.html), [Quaternion.identity](Quaternion-identity.html), [QueryParameters.Default](QueryParameters.Default.html));  
+      
+            [OverlapBoxCommand.ScheduleBatch](OverlapBoxCommand.ScheduleBatch.html)(commands, results, 1, 3).Complete();  
+      
+            foreach (var hit in results)
+                [Debug.Log](Debug.Log.html)(hit.collider.name);  
+      
+            commands.Dispose();
+            results.Dispose();
+        }
+    }
+    
+
+### Properties
+
+[center](OverlapBoxCommand-center.html)| The center of the box.  
+---|---  
+[halfExtents](OverlapBoxCommand-halfExtents.html)| Half of the size of the box
+in each dimension.  
+[orientation](OverlapBoxCommand-orientation.html)| The orientation of the box.  
+[physicsScene](OverlapBoxCommand-physicsScene.html)| The physics scene this
+command is run in.  
+[queryParameters](OverlapBoxCommand-queryParameters.html)| Structure for
+specifying additional parameters for a batch query such as layer mask or hit
+triggers.  
+  
+### Constructors
+
+[OverlapBoxCommand](OverlapBoxCommand-ctor.html)| Create an OverlapBoxCommand.  
+---|---  
+  
+### Static Methods
+
+[ScheduleBatch](OverlapBoxCommand.ScheduleBatch.html)| Schedule a batch of
+overlap box commands to perform in a job.  
+---|---  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

@@ -1,0 +1,106 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# DeviceSimulatorPlugin
+
+class in UnityEditor.DeviceSimulation
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Extend this class to create a Device Simulator plug-in.
+
+Extend this class to create a Device Simulator plug-in. A plug-in lets you
+control custom simulation parameters from a UI inside the Control Panel of a
+Device Simulator window. Unity creates, destroys, and serializes a plug-in
+together with the Device Simulator window the plug-in is active in.
+
+### Properties
+
+[deviceSimulator](DeviceSimulation.DeviceSimulatorPlugin-
+deviceSimulator.html)| Device Simulator in which this plug-in is instantiated.  
+---|---  
+[title](DeviceSimulation.DeviceSimulatorPlugin-title.html)| Title for the
+plug-in UI.  
+  
+### Public Methods
+
+[OnCreate](DeviceSimulation.DeviceSimulatorPlugin.OnCreate.html)| Called when
+Unity creates the Device Simulator window.  
+---|---  
+[OnCreateUI](DeviceSimulation.DeviceSimulatorPlugin.OnCreateUI.html)| The
+VisualElement that this method returns is embedded in the Device Simulator
+window. If the method returns null, plug-in UI is not embedded.  
+[OnDestroy](DeviceSimulation.DeviceSimulatorPlugin.OnDestroy.html)| Called
+when Device Simulator window is destroyed.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

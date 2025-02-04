@@ -1,0 +1,111 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#
+[ScriptedImporterAttribute](AssetImporters.ScriptedImporterAttribute.html).fileExtensions
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+public string[] fileExtensions;
+
+### Description
+
+The list of file name extensions that this scripted importer should handle.
+You must not include the period character, only the extension characters such
+as "ext".
+
+By specifying one or more extensions in this list, your ScriptedImporter
+becomes the default importer for each of those types of asset files. The file
+name extension list is case insensitive. Unity will match files with any
+variations of casing for the extensions you specify. Note: Do not assign the
+same file name extension to more than one ScriptedImporter. If you do, an
+error message is thrown, and files with that file name extension will not be
+imported by any ScriptedImporter. Note: You cannot override Unity's built-in
+default importers. For example, if you include ".prefab" in your file name
+extension list, it will be ignored because it is a built-in default importer
+type.
+
+    
+    
+    using UnityEngine;
+    using UnityEditor.AssetImporters;  
+      
+    [[ScriptedImporter](AssetImporters.ScriptedImporter.html)(1, new[] {"cb", "cube"})]
+    public class CubeImporter : [ScriptedImporter](AssetImporters.ScriptedImporter.html)
+    {
+        public override void OnImportAsset([AssetImportContext](AssetImporters.AssetImportContext.html) ctx)
+        {
+            // ...
+        }
+    }
+    
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

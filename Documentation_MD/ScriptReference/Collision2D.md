@@ -1,0 +1,128 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# Collision2D
+
+class in UnityEngine
+
+/
+
+Implemented in:[UnityEngine.Physics2DModule](UnityEngine.Physics2DModule.html)
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Collision details returned by 2D physics callback functions.
+
+The collisions details are returned by
+[MonoBehaviour.OnCollisionEnter2D](MonoBehaviour.OnCollisionEnter2D.html),
+[MonoBehaviour.OnCollisionStay2D](MonoBehaviour.OnCollisionStay2D.html) and
+[MonoBehaviour.OnCollisionExit2D](MonoBehaviour.OnCollisionExit2D.html)
+callbacks. It details which [Collider2D](Collider2D.html) and
+[Rigidbody2D](Rigidbody2D.html) pairs are involved in the collision as well as
+contact points where the [Collider2D](Collider2D.html) meet. **Note:** During
+the `OnCollisionExit2D` event, there are no contacts to be retrieved.
+
+### Properties
+
+[collider](Collision2D-collider.html)| The incoming Collider2D involved in the
+collision with the otherCollider.  
+---|---  
+[contactCount](Collision2D-contactCount.html)| Gets the number of contacts for
+this collision.  
+[contacts](Collision2D-contacts.html)| The specific points of contact with the
+incoming Collider2D. You should avoid using this as it produces memory
+garbage. Use GetContact or GetContacts instead.  
+[enabled](Collision2D-enabled.html)| Indicates whether the collision response
+or reaction is enabled or disabled.  
+[gameObject](Collision2D-gameObject.html)| The incoming GameObject involved in
+the collision.  
+[otherCollider](Collision2D-otherCollider.html)| The other Collider2D involved
+in the collision with the collider.  
+[otherRigidbody](Collision2D-otherRigidbody.html)| The other Rigidbody2D
+involved in the collision with the rigidbody.  
+[relativeVelocity](Collision2D-relativeVelocity.html)| The relative linear
+velocity of the two colliding objects (Read Only).  
+[rigidbody](Collision2D-rigidbody.html)| The incoming Rigidbody2D involved in
+the collision with the otherRigidbody.  
+[transform](Collision2D-transform.html)| The Transform of the incoming object
+involved in the collision.  
+  
+### Public Methods
+
+[GetContact](Collision2D.GetContact.html)| Gets the contact point at the
+specified index.  
+---|---  
+[GetContacts](Collision2D.GetContacts.html)| Retrieves all contact points for
+contacts between collider and otherCollider.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

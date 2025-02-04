@@ -1,0 +1,115 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [MeshUtility](MeshUtility.html).Optimize
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+## Declaration
+
+public static void Optimize([Mesh](Mesh.html) mesh);
+
+### Description
+
+Optimizes the Mesh data to improve rendering performance.
+
+This function causes the geometry and vertices of the mesh to be reordered
+internally in an attempt to improve vertex cache utilisation on the graphics
+hardware and thus rendering performance. This operation can take a few seconds
+or more for complex meshes and should only be used where the ordering of the
+geometry and vertices is not significant as both will change.  
+  
+You should only use this function on meshes you generate procedurally in code,
+for regular mesh assets it is called automatically by the import pipeline when
+'Optimize Mesh' is enabled in the mesh importer settings.  
+  
+This function is effectively the same as calling
+[Mesh.Optimize](Mesh.Optimize.html) or
+[Mesh.OptimizeIndexBuffers](Mesh.OptimizeIndexBuffers.html) followed by
+[Mesh.OptimizeReorderVertexBuffer](Mesh.OptimizeReorderVertexBuffer.html) on
+the mesh.
+
+    
+    
+    using UnityEngine;
+    using [UnityEditor](UnityEditor.html);  
+      
+    public class Example : [MonoBehaviour](MonoBehaviour.html)
+    {
+        void Start()
+        {
+            [Mesh](Mesh.html) mesh = gameObject.GetComponent<[MeshFilter](MeshFilter.html)>().mesh;
+            [MeshUtility.Optimize](MeshUtility.Optimize.html)(mesh);
+        }
+    }
+    
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

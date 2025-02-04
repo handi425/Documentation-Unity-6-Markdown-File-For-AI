@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\sprite\\import-images-sprites\\place-images-directly-project-folder.html",
+  "chunks": [
+    "Unity - Manual: Place images directly into the project folder Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Sprites Image import as sprites Place images directly into the project folder Images as sprites import process Import an image through the Editor menu Place images directly into the project folder In your computer’s File Explorer ( macOS : Finder ), go to your Unity project’s Assets folder. Place your image directly into the Assets folder. Unity detects the placed image and displays it in the Project window. Images as sprites import process Import an image through the Editor menu Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy",
+    "Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

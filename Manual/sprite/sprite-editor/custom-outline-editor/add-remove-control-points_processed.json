@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\sprite\\sprite-editor\\custom-outline-editor\\add-remove-control-points.html",
+  "chunks": [
+    "Unity - Manual: Add or remove control points Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Sprites Sprite editor Custom outline Add or remove control points Edit the custom outline Move control points Add or remove control points To add a control point, place the cursor over the edge of the outline. A preview of the control point appears along the outline’s edge. Click to add a new control point at that location. To remove a control point, select it and press the Del/Command+Del keys . Adding a control point to a Mesh outline Edit the custom outline Move control points Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not",
+    "Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

@@ -1,0 +1,188 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# SearchViewState
+
+class in UnityEditor.Search
+
+Leave feedback
+
+  
+
+Implements
+interfaces:[ISerializationCallbackReceiver](ISerializationCallbackReceiver.html)
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Search view state is used to create new Search windows. See
+[SearchService.ShowWindow](Search.SearchService.ShowWindow.html).
+
+    
+    
+    using [UnityEditor](UnityEditor.html);
+    using UnityEditor.Search;
+    using UnityEngine.Search;  
+      
+    static class SearchWindows
+    {
+        [[MenuItem](MenuItem.html)("Search/Views/Simple Search Bar 1")] public static void SearchViewFlags1() => CreateWindow([SearchViewFlags.None](Search.SearchViewFlags.None.html));
+        [[MenuItem](MenuItem.html)("Search/Views/Simple Search Bar 2")] public static void SearchViewFlags2() => CreateWindow([SearchViewFlags.EnableSearchQuery](Search.SearchViewFlags.EnableSearchQuery.html));
+        [[MenuItem](MenuItem.html)("Search/Views/Simple Search Bar 3")] public static void SearchViewFlags3() => CreateWindow([SearchViewFlags.DisableInspectorPreview](Search.SearchViewFlags.DisableInspectorPreview.html));
+        [[MenuItem](MenuItem.html)("Search/Views/Simple Search Bar 4")] public static void SearchViewFlags4() => CreateWindow([SearchViewFlags.EnableSearchQuery](Search.SearchViewFlags.EnableSearchQuery.html) | [SearchViewFlags.DisableInspectorPreview](Search.SearchViewFlags.DisableInspectorPreview.html));  
+      
+        static void CreateWindow([SearchViewFlags](Search.SearchViewFlags.html) flags)
+        {
+            var searchContext = [SearchService.CreateContext](Search.SearchService.CreateContext.html)(string.Empty);
+            var viewArgs = new [SearchViewState](Search.SearchViewState.html)(searchContext, [SearchViewFlags.CompactView](Search.SearchViewFlags.CompactView.html) | flags) { title = flags.ToString() };
+            [SearchService.ShowWindow](Search.SearchService.ShowWindow.html)(viewArgs);
+        }
+    }
+
+### Static Properties
+
+[defaultSize](Search.SearchViewState-defaultSize.html)| Determine the default
+search view size when it first opens.  
+---|---  
+  
+### Properties
+
+[context](Search.SearchViewState-context.html)| Search context used to
+populate the search view.  
+---|---  
+[excludeClearItem](Search.SearchViewState-excludeClearItem.html)| Set to true
+to hide the None item when in picker mode.  
+[flags](Search.SearchViewState-flags.html)| Various search view options.  
+[group](Search.SearchViewState-group.html)| Indicates the group or tab to be
+selected when the Search window opens.  
+[groupChanged](Search.SearchViewState-groupChanged.html)| External handler
+used to be notified when the user changes the current group/tab.  
+[hasQueryPanel](Search.SearchViewState-hasQueryPanel.html)| Is the
+SearchViewState allows for the left side Query panel to be shown.  
+[hasWindowSize](Search.SearchViewState-hasWindowSize.html)| Determines if the
+search view was opened with a predefined size. If false, then it means the
+search view was opened the previous window size it was last closed with.  
+[hideAllGroup](Search.SearchViewState-hideAllGroup.html)| Determine if the All
+group/tab should be hidden.  
+[hideTabs](Search.SearchViewState-hideTabs.html)| Indicates if the search tabs
+(group providers) should be hidden or shown.  
+[ignoreSaveSearches](Search.SearchViewState-ignoreSaveSearches.html)| If true,
+the search view will not load previous saved searches.  
+[isQueryPanelVisible](Search.SearchViewState-isQueryPanelVisible.html)| Is the
+Left side query panel shown?  
+[itemSize](Search.SearchViewState-itemSize.html)| Indicates the item size to
+be used when the Search window opens.  
+[position](Search.SearchViewState-position.html)| If defined, indicates the
+location of the new Search window when it opens.  
+[queryBuilderEnabled](Search.SearchViewState-queryBuilderEnabled.html)| If
+true, the search view will be opened in builder mode.  
+[selectHandler](Search.SearchViewState-selectHandler.html)| External handler
+triggered when the user has selected an item in picker mode.  
+[sessionId](Search.SearchViewState-sessionId.html)| Unique session ID
+generated by the system each time a search view is opened.  
+[tableConfig](Search.SearchViewState-tableConfig.html)| Access the search
+table configuration used if in table view.  
+[text](Search.SearchViewState-text.html)| Text used to initialize the search
+view.  
+[title](Search.SearchViewState-title.html)| Indicates the search topic title.  
+[trackingHandler](Search.SearchViewState-trackingHandler.html)| External
+handler triggered each time the user clicks on an item in the search view.  
+[windowSize](Search.SearchViewState-windowSize.html)| Determine the size the
+search view was opened with.  
+[windowTitle](Search.SearchViewState-windowTitle.html)| If defined, this title
+will be used to open a new search view and sets the EditorWindow.titleContent.  
+  
+### Constructors
+
+[SearchViewState](Search.SearchViewState-ctor.html)| Create search view flags
+used to create a new Search window.  
+---|---  
+  
+### Public Methods
+
+[GetProviderIds](Search.SearchViewState.GetProviderIds.html)| Returns all the
+search provider ids in the current search context.  
+---|---  
+[GetProviderTypes](Search.SearchViewState.GetProviderTypes.html)| Returns all
+the search provider types in the current search context.  
+[HasFlag](Search.SearchViewState.HasFlag.html)| Checks if the search view was
+defined with specific set of flags.  
+[ToString](Search.SearchViewState.ToString.html)| Convert SearchViewState to a
+string.  
+  
+### Static Methods
+
+[CreatePickerState](Search.SearchViewState.CreatePickerState.html)| Create a
+SearchViewState specially setup to show an Object Picker.  
+---|---  
+[LoadDefaults](Search.SearchViewState.LoadDefaults.html)| Returns a newly
+created default search view state.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

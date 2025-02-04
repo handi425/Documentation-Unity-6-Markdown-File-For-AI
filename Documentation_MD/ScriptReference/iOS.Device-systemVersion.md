@@ -1,0 +1,115 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [Device](iOS.Device.html).systemVersion
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+public static string systemVersion;
+
+### Description
+
+iOS version.
+
+iOS version as a string. E.g. "7.0" or "8.1".
+
+    
+    
+    using UnityEngine;
+    using UnityEngine.iOS;  
+      
+    public class SystemVersionExample : [MonoBehaviour](MonoBehaviour.html)
+    {
+        bool allowFeature = true;  
+      
+        void Start()
+        {
+            // Get the [iOS](PlayerSettings.iOS.html) version of the device this is running on
+            string systemVersion = [Device.systemVersion](iOS.Device-systemVersion.html);  
+      
+            // Separate the version string to major and minor version numbers
+            string[] separatedVersion = systemVersion.Split('.');  
+      
+            // Parse the major version number to an integer that can be used for comparison
+            int majorVersion = int.Parse(separatedVersion[0]);  
+      
+            // Check if major version number of the device this is running on is below [iOS](PlayerSettings.iOS.html) 12
+            if (majorVersion < 12)
+            {
+                // Log a message and disable the version-specific features.
+                [Debug.Log](Debug.Log.html)("Sorry, this amazing feature requires [iOS](PlayerSettings.iOS.html) 12 and above to work. Please update your [iOS](PlayerSettings.iOS.html) version.");
+                allowFeature = false;
+            }
+        }
+    }
+    
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

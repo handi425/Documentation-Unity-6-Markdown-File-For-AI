@@ -1,0 +1,108 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# RenderTargetFlags
+
+enumeration
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+This enum describes optional flags for the
+[RenderTargetBinding](Rendering.RenderTargetBinding.html) structure.
+
+This enum describes optional flags for the
+[RenderTargetBinding](Rendering.RenderTargetBinding.html) structure.
+
+### Properties
+
+[None](Rendering.RenderTargetFlags.None.html)| No flag option (0).  
+---|---  
+[ReadOnlyDepth](Rendering.RenderTargetFlags.ReadOnlyDepth.html)| The depth
+buffer bound for rendering may also bound as a samplable texture to the
+graphics pipeline: some platforms require the depth buffer to be set to read-
+only mode in such cases (D3D11, Vulkan). This flag can be used for both packed
+depth-stencil as well as separate depth-stencil formats.  
+[ReadOnlyStencil](Rendering.RenderTargetFlags.ReadOnlyStencil.html)| The
+stencil buffer bound for rendering may also bound as a samplable texture to
+the graphics pipeline: some platforms require the stencil buffer to be set to
+read-only mode in such cases (D3D11, Vulkan). This flag can be used for both
+packed depth-stencil as well as separate depth-stencil formats.  
+[ReadOnlyDepthStencil](Rendering.RenderTargetFlags.ReadOnlyDepthStencil.html)|
+Both depth and stencil buffers bound for rendering may be bound as samplable
+textures to the graphics pipeline: some platforms require the depth and
+stencil buffers to be set to read-only mode in such cases (D3D11, Vulkan).
+This flag can be used for both packed depth-stencil as well as separate depth-
+stencil formats. This flag is a bitwise combination of
+RenderTargetFlags.ReadOnlyDepth and RenderTargetFlags.ReadOnlyStencil.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

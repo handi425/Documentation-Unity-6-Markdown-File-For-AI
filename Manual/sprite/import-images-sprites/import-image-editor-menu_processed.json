@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\sprite\\import-images-sprites\\import-image-editor-menu.html",
+  "chunks": [
+    "Unity - Manual: Import an image through the Editor menu Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Sprites Image import as sprites Import an image through the Editor menu Place images directly into the project folder Set the Texture Type of an imported image to Sprite (2D and UI) Import an image through the Editor menu In the Unity Editor, go to Assets > Import New Asset . Select the image you want to import from the File Explorer ( macOS : Finder ) window. Unity makes a copy of your selected image and places it in the Assets folder. Refer to Importing assets for more information on how Unity processes and organizes imported assets. Place images directly into the project folder Set the Texture Type of an imported image to Sprite (2D and UI) Copyright ©2005-2025 Unity Technologies. All rights",
+    "reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

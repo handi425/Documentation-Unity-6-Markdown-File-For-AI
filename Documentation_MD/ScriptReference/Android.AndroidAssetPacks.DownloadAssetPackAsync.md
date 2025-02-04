@@ -1,0 +1,135 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [AndroidAssetPacks](Android.AndroidAssetPacks.html).DownloadAssetPackAsync
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+## Declaration
+
+public static
+[Android.DownloadAssetPackAsyncOperation](Android.DownloadAssetPackAsyncOperation.html)
+DownloadAssetPackAsync(string[] assetPackNames);
+
+### Parameters
+
+assetPackNames | The array of names of Android asset packs to download.  
+---|---  
+  
+### Returns
+
+**DownloadAssetPackAsyncOperation** Returns an object that represents the
+download operation. If you yield this object inside a coroutine, the coroutine
+pauses until the operation is complete.
+
+### Description
+
+Downloads Android asset packs.
+
+This method directly wraps Google's PlayCore plugin API. If the PlayCore
+plugin is missing, calling this method throws an InvalidOperationException
+exception. Additional resources:
+[DownloadAssetPackAsyncOperation](Android.DownloadAssetPackAsyncOperation.html),
+[AndroidAssetPackInfo](Android.AndroidAssetPackInfo.html),
+[AndroidAssetPacks.CancelAssetPackDownload](Android.AndroidAssetPacks.CancelAssetPackDownload.html),
+[AndroidAssetPacks.GetAssetPackPath](Android.AndroidAssetPacks.GetAssetPackPath.html),
+[AndroidAssetPacks.GetAssetPackStateAsync](Android.AndroidAssetPacks.GetAssetPackStateAsync.html),
+[AndroidAssetPacks.RemoveAssetPack](Android.AndroidAssetPacks.RemoveAssetPack.html),
+[AndroidAssetPacks.RequestToUseMobileDataAsync](Android.AndroidAssetPacks.RequestToUseMobileDataAsync.html).
+
+* * *
+
+## Declaration
+
+public static void DownloadAssetPackAsync(string[] assetPackNames,
+Action<AndroidAssetPackInfo> callback);
+
+### Parameters
+
+assetPackNames | The array of names of Android asset packs to download.  
+---|---  
+callback | The callback method to inform about download progress. It gets called multiple times for each asset pack during its download. The callback method must have a parameter of AndroidAssetPackInfo type. The default value is null.  
+  
+### Description
+
+Downloads Android asset packs.
+
+This method directly wraps Google's PlayCore plugin API. If the PlayCore
+plugin is missing, calling this method throws an InvalidOperationException
+exception. Additional resources:
+[AndroidAssetPackInfo](Android.AndroidAssetPackInfo.html),
+[AndroidAssetPacks.CancelAssetPackDownload](Android.AndroidAssetPacks.CancelAssetPackDownload.html),
+[AndroidAssetPacks.GetAssetPackPath](Android.AndroidAssetPacks.GetAssetPackPath.html),
+[AndroidAssetPacks.GetAssetPackStateAsync](Android.AndroidAssetPacks.GetAssetPackStateAsync.html),
+[AndroidAssetPacks.RemoveAssetPack](Android.AndroidAssetPacks.RemoveAssetPack.html),
+[AndroidAssetPacks.RequestToUseMobileDataAsync](Android.AndroidAssetPacks.RequestToUseMobileDataAsync.html).
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

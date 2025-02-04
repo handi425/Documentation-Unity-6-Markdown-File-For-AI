@@ -1,0 +1,201 @@
+[](https://docs.unity3d.com)
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+Language : English
+
+  * [English](/Manual/UIE-uxml-element-ProgressBar.html)
+  * [中文](/cn/current/Manual/UIE-uxml-element-ProgressBar.html)
+  * [日本語](/ja/current/Manual/UIE-uxml-element-ProgressBar.html)
+  * [한국어](/kr/current/Manual/UIE-uxml-element-ProgressBar.html)
+
+[](https://docs.unity3d.com)
+
+## Unity Manual
+
+Version: Unity 6Select a different version
+
+Language : English
+
+  * [English](/Manual/UIE-uxml-element-ProgressBar.html)
+  * [中文](/cn/current/Manual/UIE-uxml-element-ProgressBar.html)
+  * [日本語](/ja/current/Manual/UIE-uxml-element-ProgressBar.html)
+  * [한국어](/kr/current/Manual/UIE-uxml-element-ProgressBar.html)
+
+  * [Working in Unity](working-in-unity.html)
+  * [User interface (UI)](UIToolkits.html)
+  * [UI Toolkit](UIElements.html)
+  * [Structure UI](UIE-structure-ui.html)
+  * [Visual elements reference](UIE-ElementRef.html)
+  * ProgressBar
+
+[](UIE-uxml-element-PopupWindow.html)
+
+PopupWindow
+
+[](UIE-uxml-element-PropertyField.html)
+
+PropertyField
+
+# ProgressBar
+
+A ProgressBar element displays the progress of an ongoing task or process. Use
+it to provide visual feedback to the user about the progress of a task, such
+as file downloads, game level loading, or any other task that might take a
+while to complete.
+
+You can set a lower and upper value for the ProgressBar. The ProgressBar’s
+current value is constrained within these bounds. If you set the value of the
+ProgressBar equal to the lower value, the bar is at the start. If you set the
+value of the ProgressBar equal to the upper value, the bar is at the end.
+
+## Create a ProgressBar
+
+You can create a ProgressBar with **UI**(User Interface) Allows a user to
+interact with your application. Unity currently supports three UI systems.
+[More info](UI-system-compare.html)  
+See in [Glossary](Glossary.html#UI) Builder, UXML, and C#.
+
+To create a ProgressBar with C#, create a new instance of a
+[ProgressBar](../ScriptReference/UIElements.ProgressBar.html) object. For
+example:
+
+    
+    
+    ProgressBar myElement = new ProgressBar("Label text");
+    
+
+## Customize the bar
+
+To change the style of the bar, use the `.unity-progress-bar__progress` USS
+selector. For example, the following USS changes the size and the color of the
+bar:
+
+    
+    
+    .unity-progress-bar__progress {
+        width: 20px;
+        height: 50px;
+        background-color: yellow;
+    }
+    
+
+## C# base class and namespace
+
+**C# class** : [`ProgressBar`](../ScriptReference/UIElements.ProgressBar.html)  
+**Namespace** : `UnityEngine.UIElements`  
+**Base class** :
+[`AbstractProgressBar`](../ScriptReference/UIElements.AbstractProgressBar.html)
+
+## Inherited UXML attributes
+
+This element inherits the following attributes from its base class:
+
+**Name** | **Type** | **Description**  
+---|---|---  
+`binding-path` | `string` | Path of the target property to be bound.  
+`focusable` | `boolean` | True if the element can be focused.  
+`high-value` | `float` | Sets the maximum value of the ProgressBar.  
+`low-value` | `float` | Sets the minimum value of the ProgressBar.  
+`tabindex` | `int` | An integer used to sort focusables in the focus ring. Must be greater than or equal to zero.  
+`title` | `string` | Sets the title of the ProgressBar that displays in the center of the control.  
+`value` | `float` | Sets the progress value. If the value has changed, dispatches an `ChangeEvent_1` of type float.  
+  
+This element also inherits the following attributes from
+[`VisualElement`](UIE-uxml-element-VisualElement.html):
+
+**Name** | **Type** | **Description**  
+---|---|---  
+`content-container` | `string` | Child elements are added to it, usually this is the same as the element itself.  
+`data-source` | `Object` | Assigns a data source to this VisualElement which overrides any inherited data source. This data source is inherited by all children.  
+`data-source-path` | `string` | Path from the data source to the value.  
+`data-source-type` | `System.Type` | The possible type of data source assignable to this VisualElement.  
+  
+This information is only used by the UI Builder as a hint to provide some
+completion to the data source path field when the effective data source cannot
+be specified at design time.  
+`language-direction` | [`UIElements.LanguageDirection`](../ScriptReference/UIElements.LanguageDirection.html) | Indicates the directionality of the element’s text. The value will propagate to the element’s children.  
+  
+Setting the languageDirection to RTL adds basic support for right-to-left
+(RTL) by reversing the text and handling linebreaking and word wrapping
+appropriately. However, it does not provide comprehensive RTL support, as this
+would require text shaping, which includes the reordering of characters, and
+OpenType font feature support. Comprehensive RTL support is planned for future
+updates, which will involve additional APIs to handle language, script, and
+font feature specifications.  
+  
+To enhance the RTL functionality of this property, users can explore available
+third-party plugins in the Unity Asset Store and make use of
+`ITextElementExperimentalFeatures.renderedText`  
+`name` | `string` | The name of this VisualElement.  
+  
+Use this property to write USS selectors that target a specific element. The
+standard practice is to give an element a unique name.  
+`picking-mode` | [`UIElements.PickingMode`](../ScriptReference/UIElements.PickingMode.html) | Determines if this element can be pick during mouseEvents or `IPanel.Pick` queries.  
+`style` | `string` | Sets the `VisualElement` style values.  
+`tooltip` | `string` | Text to display inside an information box after the user hovers the element for a small amount of time. This is only supported in the Editor UI.  
+`usage-hints` | [`UIElements.UsageHints`](../ScriptReference/UIElements.UsageHints.html) | A combination of hint values that specify high-level intended usage patterns for the `VisualElement`. This property can only be set when the `VisualElement` is not yet part of a `Panel`. Once part of a `Panel`, this property becomes effectively read-only, and attempts to change it will throw an exception. The specification of proper `UsageHints` drives the system to make better decisions on how to process or accelerate certain operations based on the anticipated usage pattern. Note that those hints do not affect behavioral or visual results, but only affect the overall performance of the panel and the elements within. It’s advised to always consider specifying the proper `UsageHints`, but keep in mind that some `UsageHints` might be internally ignored under certain conditions (e.g. due to hardware limitations on the target platform).  
+`view-data-key` | `string` | Used for view data persistence, such as tree expanded states, scroll position, or zoom level.  
+  
+This key is used to save and load the view data from the view data store. If
+you don’t set this key, the persistence is disabled for the associated
+`VisualElement`. For more information, refer to [View data persistence](UIE-
+ViewData.html).  
+  
+## USS classes
+
+The following table lists all the C# public property names and their related
+USS selector.
+
+**C# property** | **USS selector** | **Description**  
+---|---|---  
+`ussClassName` | `.unity-progress-bar` | USS Class Name used to style the `ProgressBar`.  
+`containerUssClassName` | `.unity-progress-bar__container` | USS Class Name used to style the container of the `ProgressBar`.  
+`titleUssClassName` | `.unity-progress-bar__title` | USS Class Name used to style the title of the `ProgressBar`.  
+`titleContainerUssClassName` | `.unity-progress-bar__title-container` | USS Class Name used to style the container of the title of the `ProgressBar`.  
+`progressUssClassName` | `.unity-progress-bar__progress` | USS Class Name used to style the progress bar of the `ProgressBar`.  
+`backgroundUssClassName` | `.unity-progress-bar__background` | USS Class Name used to style the background of the `ProgressBar`.  
+`disabledUssClassName` | `.unity-disabled` | USS class name of local disabled elements.  
+  
+You can also use the [Matching Selectors section in the Inspector or the UI
+Toolkit Debugger](UIB-testing-ui.html#matching-selectors) to see which USS
+selectors affect the components of the `VisualElement` at every level of its
+hierarchy.
+
+## Additional resources
+
+  * [Label](UIE-uxml-element-Label.html)
+  * [RadioButton](UIE-uxml-element-RadioButton.html)
+
+[](UIE-uxml-element-PopupWindow.html)
+
+PopupWindow
+
+[](UIE-uxml-element-PropertyField.html)
+
+PropertyField
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://learn.unity.com/)[Community
+Answers](https://answers.unity3d.com)[Knowledge
+Base](https://support.unity3d.com/hc/en-
+us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-
+store)[Terms of
+use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy
+Policy](https://unity.com/legal/privacy-
+policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share
+My Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

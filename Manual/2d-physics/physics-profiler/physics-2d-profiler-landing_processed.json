@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\2d-physics\\physics-profiler\\physics-2d-profiler-landing.html",
+  "chunks": [
+    "Unity - Manual: Physics 2D Profiler Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity 2D Physics Physics 2D Profiler Wheel Joint 2D Physics 2D Profiler module reference Physics 2D Profiler Approaches to analyzing the performance of 2D physics in your application. Page Description Physics 2D Profiler module reference Explore the profiler A window that helps you to optimize your game. It shows how much time is spent in the various areas of your game. For example, it can report the percentage of time spent rendering, animating, or in your game logic. More info See in Glossary properties for analyzing the performance of 2D physics in your application. Use the Physics Profiler Legacy mode Set the physics profiler module to legacy mode to work with data from old versions of the Unity Editor. Wheel Joint 2D",
+    "Physics 2D Profiler module reference Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

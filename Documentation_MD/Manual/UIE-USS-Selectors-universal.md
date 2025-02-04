@@ -1,0 +1,129 @@
+[](https://docs.unity3d.com)
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+Language : English
+
+  * [English](/Manual/UIE-USS-Selectors-universal.html)
+  * [中文](/cn/current/Manual/UIE-USS-Selectors-universal.html)
+  * [日本語](/ja/current/Manual/UIE-USS-Selectors-universal.html)
+  * [한국어](/kr/current/Manual/UIE-USS-Selectors-universal.html)
+
+[](https://docs.unity3d.com)
+
+## Unity Manual
+
+Version: Unity 6Select a different version
+
+Language : English
+
+  * [English](/Manual/UIE-USS-Selectors-universal.html)
+  * [中文](/cn/current/Manual/UIE-USS-Selectors-universal.html)
+  * [日本語](/ja/current/Manual/UIE-USS-Selectors-universal.html)
+  * [한국어](/kr/current/Manual/UIE-USS-Selectors-universal.html)
+
+  * [Working in Unity](working-in-unity.html)
+  * [User interface (UI)](UIToolkits.html)
+  * [UI Toolkit](UIElements.html)
+  * [Style UI](UIE-USS.html)
+  * [USS selectors](UIE-USS-Selectors.html)
+  * Universal selectors
+
+[](UIE-USS-Selectors-class.html)
+
+Class selectors
+
+[](UIE-USS-Selectors-descendant.html)
+
+Descendant selectors
+
+# Universal selectors
+
+A USS universal selector, also called the wildcard selector, matches any
+element. USS universal selectors are analogous to CSS universal selectors.
+
+## Syntax
+
+The following is the syntax for a USS universal selector:
+
+    
+    
+    * { ... }
+    
+
+## Example
+
+To demonstrate how simple selectors match elements, here is an example
+**UI**(User Interface) Allows a user to interact with your application. Unity
+currently supports three UI systems. [More info](UI-system-compare.html)  
+See in [Glossary](Glossary.html#UI) Document.
+
+    
+    
+    <UXML xmlns="UnityEngine.UIElements">
+      <VisualElement name="container1">
+        <VisualElement name="container2" class="yellow">
+          <Button name="OK" class="yellow" text="OK" />
+          <Button name="Cancel" text="Cancel" />
+        </VisualElement>
+      </VisualElement>
+    </UXML>
+    
+
+With no styles applied, the UI looks like the following:
+
+![Example buttons with margins and thin blue borders.](../uploads/Main/uss-
+selectors-nostyle.png) Example buttons with margins and thin blue borders.
+
+The following universal class selector style rule matches every element, and
+changes its background color to yellow. This includes the main area of the
+window, because the stylesheet is applied to the window’s root element.
+
+    
+    
+    * {
+        background-color: yellow;
+    }
+    
+
+The UI looks like the following when you apply the style:
+
+![Every element has a yellow background color.](../uploads/Main/uss-selectors-
+universal.png) Every element has a yellow background color.
+
+## Additional resources
+
+  * [Best practices for USS](UIE-USS-WritingStyleSheets.html)
+
+[](UIE-USS-Selectors-class.html)
+
+Class selectors
+
+[](UIE-USS-Selectors-descendant.html)
+
+Descendant selectors
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://learn.unity.com/)[Community
+Answers](https://answers.unity3d.com)[Knowledge
+Base](https://support.unity3d.com/hc/en-
+us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-
+store)[Terms of
+use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy
+Policy](https://unity.com/legal/privacy-
+policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share
+My Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

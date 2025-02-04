@@ -1,0 +1,100 @@
+[](https://docs.unity3d.com)
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+Language : English
+
+  * [English](/Manual/sprite/atlas/sprite-atlas-reference.html)
+  * [中文](/cn/current/Manual/sprite/atlas/sprite-atlas-reference.html)
+  * [日本語](/ja/current/Manual/sprite/atlas/sprite-atlas-reference.html)
+  * [한국어](/kr/current/Manual/sprite/atlas/sprite-atlas-reference.html)
+
+[](https://docs.unity3d.com)
+
+## Unity Manual
+
+Version: Unity 6Select a different version
+
+Language : English
+
+  * [English](/Manual/sprite/atlas/sprite-atlas-reference.html)
+  * [中文](/cn/current/Manual/sprite/atlas/sprite-atlas-reference.html)
+  * [日本語](/ja/current/Manual/sprite/atlas/sprite-atlas-reference.html)
+  * [한국어](/kr/current/Manual/sprite/atlas/sprite-atlas-reference.html)
+
+  * [Working in Unity](../../working-in-unity.html)
+  * [2D in Unity](../../Unity2D.html)
+  * [Sprites](../../sprite/sprite-landing.html)
+  * [Sprite atlas](../../sprite/atlas/atlas-landing.html)
+  * Sprite Atlas reference
+
+[](../../sprite/atlas/create-sprite-atlas.html)
+
+Create a Sprite Atlas
+
+[](../../sprite/atlas/master-variant/master-variant-landing.html)
+
+Variant Sprite Atlases
+
+# Sprite Atlas reference
+
+**Property** | **Description**  
+---|---  
+**Type** | Set the **Sprite** A 2D graphic objects. If you are used to working in 3D, Sprites are essentially just standard textures but there are special techniques for combining and managing sprite textures for efficiency and convenience during development. [More info](../../sprite/sprite-landing.html)  
+See in [Glossary](../../Glossary.html#Sprite) Atlas’ Type to either **Master**
+or **Variant**. **Master** is the default Type setting. When you set this
+property to **Variant** , Unity reveals additional property settings. For more
+information about the two types, refer to [Master and Variant Sprite
+Atlases](../master-variant/master-variant-sprite-atlases).  
+**Include in Build** | Check this box to include the **Sprite Atlas** A utility that packs several sprite textures tightly together within a single texture known as an atlas. [More info](../../sprite/atlas/v2/v2-landing.html)  
+See in [Glossary](../../Glossary.html#SpriteAtlas) Asset in the current build.
+This option is enabled by default.  
+**Allow Rotation** | Check this box to allow the Sprites to rotate when Unity packs them into the Sprite Atlas. This maximizes the density of Sprites in the combined Texture, and is enabled by default. Disable this option if the Sprite Atlas contains [Canvas UI](UICanvas) element Textures, as when Unity rotates the Textures in the Sprite Atlas during packing, it rotates their orientation in the **Scene** A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. [More info](../../CreatingScenes.html)  
+See in [Glossary](../../Glossary.html#Scene) as well.  
+**Tight Packing** | Check this box to pack Sprites based on their Sprite outlines instead of the default rectangle outline. This maximizes the density of Sprites in the combined Texture, and is enabled by default.  
+**Padding** | Defines how many pixels are between the individual Sprite Textures in the Sprite Atlas. This is a buffer to prevent **pixel** The smallest unit in a computer image. Pixel size depends on your screen resolution. Pixel lighting is calculated at every screen pixel. [More info](../../ShadowPerformance.html)  
+See in [Glossary](../../Glossary.html#pixel) overlap between Sprites that are
+next to each other in the Sprite Atlas. The default value is 4 pixels.  
+**Read/Write Enabled** | Check this box to enable access to the Texture data from script functions (such as [Texture2D.SetPixels](../../../ScriptReference/Texture2D.SetPixels.html), and other [Texture2D](../../../ScriptReference/Texture2D.html) functions). If you enable this property, Unity creates a copy of the Texture data. This doubles the amount of memory required for Texture Assets, and can negatively affect performance. This property is disabled by default. This property is only valid for uncompressed or DXT compressed Textures as Unity can’t read other types of compressed Textures.  
+**Generate Mip Maps** | Check this box to enable [mipmap](../../texture-mipmaps-introduction.html) generation. For more information, refer to the **Generate Mip Maps** property in [Sprite (2D and UI) Import Settings](../../texture-type-sprite.html).  
+**sRGB** | Check this box to store Textures in gamma space. For more information, refer to the **sRGB (Color Texture)** property in [Sprite (2D and UI) Import Settings](../../texture-type-sprite.html).  
+**Filter Mode** | Select how Unity filters packed Textures when they stretch during transformations. This setting overrides the **Filter Mode** setting of any packed Sprite in the Atlas. For more information, refer to the **Filter Mode** property in [Sprite (2D and UI) Import Settings](../../texture-type-sprite.html).  
+**Default** (Platform-specific overrides panel on the Texture Import Settings window) | Sets the resolution, the file size with associated memory size requirements, the pixel dimensions, and the quality of your Textures for each target platform of the Sprite Atlas. This panel lets you override these settings on the individual Textures that the Sprite Atlas contains. For more information, refer to [Platform-specific overrides](../../class-TextureImporter.html).  
+**Objects For Packing** | Unity packs all items in this list into the currently selected Sprite Atlas. For more information, refer to [Selecting items for the Objects for Packing list](workflow/select-items-objects-packing-list.html).  
+  
+* * *
+
+  * New in Unity 2017.1 NewIn20171 SpriteAtlas
+
+[](../../sprite/atlas/create-sprite-atlas.html)
+
+Create a Sprite Atlas
+
+[](../../sprite/atlas/master-variant/master-variant-landing.html)
+
+Variant Sprite Atlases
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://learn.unity.com/)[Community
+Answers](https://answers.unity3d.com)[Knowledge
+Base](https://support.unity3d.com/hc/en-
+us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-
+store)[Terms of
+use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy
+Policy](https://unity.com/legal/privacy-
+policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share
+My Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

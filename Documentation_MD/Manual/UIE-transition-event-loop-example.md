@@ -1,0 +1,223 @@
+[](https://docs.unity3d.com)
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+Language : English
+
+  * [English](/Manual/UIE-transition-event-loop-example.html)
+  * [中文](/cn/current/Manual/UIE-transition-event-loop-example.html)
+  * [日本語](/ja/current/Manual/UIE-transition-event-loop-example.html)
+  * [한국어](/kr/current/Manual/UIE-transition-event-loop-example.html)
+
+[](https://docs.unity3d.com)
+
+## Unity Manual
+
+Version: Unity 6Select a different version
+
+Language : English
+
+  * [English](/Manual/UIE-transition-event-loop-example.html)
+  * [中文](/cn/current/Manual/UIE-transition-event-loop-example.html)
+  * [日本語](/ja/current/Manual/UIE-transition-event-loop-example.html)
+  * [한국어](/kr/current/Manual/UIE-transition-event-loop-example.html)
+
+  * [Working in Unity](working-in-unity.html)
+  * [User interface (UI)](UIToolkits.html)
+  * [UI Toolkit](UIElements.html)
+  * [Control behavior with events](UIE-Events.html)
+  * [Event examples](UIE-event-examples.html)
+  * Create looping transitions
+
+[](UIE-transition-event-example.html)
+
+Create a transition event
+
+[](UIE-ui-renderer.html)
+
+UI Renderer
+
+# Create looping transitions
+
+Version: 2022.1+
+
+This example demonstrates how to leverage the `TransitionEndEvent` to create
+transitions that loop.
+
+## Example overview
+
+This example demonstrates two looping animations:
+
+  * Yo-yo: The loop starts from state A to state B with transition, and then return back to state A with transition.
+  * A-to-B: The loop starts from state A to state B with transition, and then return back to state A without transition.
+
+![Window shows a yo-yo and a A-to-B loop transition
+effects](../uploads/Main/uxml/loop-transition.gif) Window shows a yo-yo and a
+A-to-B loop transition effects
+
+You can find the completed files that this example creates in this [GitHub
+repository](https://github.com/Unity-Technologies/ui-toolkit-manual-code-
+examples/tree/master/loop-transition-example).
+
+## Prerequisites
+
+This guide is for developers familiar with the Unity Editor, **UI**(User
+Interface) Allows a user to interact with your application. Unity currently
+supports three UI systems. [More info](UI-system-compare.html)  
+See in [Glossary](Glossary.html#UI) Toolkit, and C# scripting. Before you
+start, get familiar with the following:
+
+  * [UXML](UIE-UXML.html)
+  * [USS transition](UIE-Transitions.html)
+  * [Transition events](UIE-Transition-Events.html)
+
+## Create the example
+
+  1. Create a project in Unity with any template.
+
+  2. In your **Project window** A window that shows the contents of your `Assets` folder (Project tab) [More info](ProjectView.html)  
+See in [Glossary](Glossary.html#Projectwindow), create a folder named `loop-
+transition-example`.
+
+  3. Right-click in the folder, and select **Create** > **UI Toolkit** > **Editor Window**.
+
+  4. In the **UI Toolkit Editor Window Creator** window, enter `LoopingExample`.
+
+  5. Save your changes. This creates three files as `LoopingExample.cs`, `LoopingExample.uss`, and `LoopingExample.uxml`.
+
+  6. Replace `LoopingExample.cs` with the following content:
+    
+        using UnityEditor;
+    using UnityEngine;
+    using UnityEngine.UIElements;
+    public class LoopingExample : EditorWindow
+    {
+        [SerializeField] private VisualTreeAsset m_VisualTreeAsset = default;
+        private Label _yoyoLabel;
+        private Label _a2bLabel;
+        [MenuItem("Window/UI Toolkit/Transition Looping Example")]
+        public static void ShowExample()
+        {
+            var wnd = GetWindow<LoopingExample>();
+            wnd.titleContent = new GUIContent("TransitionStyle");
+        }
+        public void CreateGUI()
+        {
+            VisualElement root = rootVisualElement;
+            VisualElement asset = m_VisualTreeAsset.Instantiate();
+            root.Add(asset);
+            SetupYoyo(root);
+            SetupA2B(root);
+        }
+        // This method powers the yo-yo loop.
+        private void SetupYoyo(VisualElement root)
+        {
+            _yoyoLabel = root.Q<Label>(name: "yoyo-label");
+            // When the animation ends, the callback toggles a class to set the scale to 1.3 
+            // or back to 1.0 when it's removed.
+            _yoyoLabel.RegisterCallback<TransitionEndEvent>(evt => _yoyoLabel.ToggleInClassList("enlarge-scale-yoyo"));
+            // Schedule the first transition 100 milliseconds after the root.schedule.Execute method is called.
+            root.schedule.Execute(() => _yoyoLabel.ToggleInClassList("enlarge-scale-yoyo")).StartingIn(100);
+        }
+        // This method powers the A-to-B cycle.
+        private void SetupA2B(VisualElement root)
+        {
+            _a2bLabel = root.Q<Label>(name:"a2b-label");
+            _a2bLabel.RegisterCallback<TransitionEndEvent>(evt =>
+            {
+                _a2bLabel.RemoveFromClassList("enlarge-scale-a2b");
+                _a2bLabel.schedule.Execute(() => _a2bLabel.AddToClassList("enlarge-scale-a2b")).StartingIn(10);
+            });
+            _a2bLabel.schedule.Execute(() => _a2bLabel.AddToClassList("enlarge-scale-a2b")).StartingIn(100);
+        }
+    }
+    
+
+  7. Replace `LoopingExample.uxml` with the following content:
+    
+        <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" 
+             xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" 
+             noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" 
+             editor-extension-mode="False">
+        <Style src="LoopingExample.uss" />
+        <ui:VisualElement name="container">
+            <ui:VisualElement>
+                    <ui:Label text="Yo-yo Transition" name="yoyo-label" class="text-style" />
+            </ui:VisualElement>
+            <ui:VisualElement>
+                    <ui:Label text="A-to-B Transition" name="a2b-label" class="text-style"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:UXML>
+    
+
+  8. Replace `LoopingExample.uss` with the following content:
+    
+            #yoyo-label{
+            transition-duration: 3s;
+        }
+    
+        .text-style {
+            font-size: 20px;
+            flex-grow: 0;
+            margin: 20px; 
+        }
+    
+        .enlarge-scale-a2b{
+            scale: 1.5 1.5;
+            transition-duration: 3s;
+        }
+            
+        .enlarge-scale-yoyo{
+            scale: 1.5 1.5;
+        }
+    
+        #container{
+            flex-grow:1;
+            justify-content: space-around;
+            align-items: center;
+        }
+    
+
+  9. To test the example, from the menu, select **Window** -> **UI Toolkit** -> **Transition Looping Example**.
+
+## Additional resources
+
+  * [USS](UIE-USS.html)
+  * [Handle events](UIE-Events-Handling.html)
+  * [Create a transition event](UIE-transition-event-example.html)
+  * [Create a simple transition with UI Builder and C# scripts](UIE-transition-example.html)
+
+[](UIE-transition-event-example.html)
+
+Create a transition event
+
+[](UIE-ui-renderer.html)
+
+UI Renderer
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://learn.unity.com/)[Community
+Answers](https://answers.unity3d.com)[Knowledge
+Base](https://support.unity3d.com/hc/en-
+us)[Forums](https://forum.unity3d.com)[Asset Store](https://unity3d.com/asset-
+store)[Terms of
+use](https://docs.unity3d.com/Manual/TermsOfUse.html)[Legal](https://unity.com/legal)[Privacy
+Policy](https://unity.com/legal/privacy-
+policy)[Cookies](https://unity.com/legal/cookie-policy)[Do Not Sell or Share
+My Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

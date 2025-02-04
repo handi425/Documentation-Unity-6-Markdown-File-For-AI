@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\sprite\\sprite-editor\\custom-physics-shape\\move-edges.html",
+  "chunks": [
+    "Unity - Manual: Move edges Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Sprites Sprite editor Custom physics shape Move edges Add or remove control points Work with multiple outlines Move edges To select the edges of the physics shape instead of its control points, hold the Control/Ctrl key. Click and drag the highlighted edge to move it into new positions to affect the physics shape. Fig.1: Select the edge of the outline. Fig.2: Drag and move the edge freely once selected. Add or remove control points Work with multiple outlines Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information",
+    "Your Privacy Choices (Cookie Settings)"
+  ]
+}

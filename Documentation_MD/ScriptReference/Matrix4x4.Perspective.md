@@ -1,0 +1,149 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [Matrix4x4](Matrix4x4.html).Perspective
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+## Declaration
+
+public static [Matrix4x4](Matrix4x4.html) Perspective(float fov, float aspect,
+float zNear, float zFar);
+
+### Parameters
+
+fov | Vertical field-of-view in degrees.  
+---|---  
+aspect | Aspect ratio (width divided by height).  
+zNear | Near depth clipping plane value.  
+zFar | Far depth clipping plane value.  
+  
+### Returns
+
+**Matrix4x4** The projection matrix.
+
+### Description
+
+Create a perspective projection matrix.
+
+Projection matrices in Unity follow
+[OpenGL](https://en.wikipedia.org/wiki/OpenGL) convention, i.e. clip space
+near plane is at `z=-1`, and far plane is at `z=1`.  
+  
+The returned matrix embeds a z-flip operation whose purpose is to cancel the
+z-flip performed by the camera view matrix. If the view matrix is an identity
+or some custom matrix that doesn't perform a z-flip, consider multiplying the
+third column of the projection matrix (i.e. m02, m12, m22 and m32) by -1.  
+  
+Note that depending on the graphics API used, projection matrices in shaders
+can follow different convention, for example the D3D-style clip space has near
+plane at zero and far plane at one; and "reversed Z" projection has near plane
+at one and far plane at zero. To calculate projection matrix value suitable
+for passing to shader variables, use
+[GL.GetGPUProjectionMatrix](GL.GetGPUProjectionMatrix.html).
+
+    
+    
+    using UnityEngine;  
+      
+    public class ExampleScript : [MonoBehaviour](MonoBehaviour.html)
+    {
+        void Start()
+        {
+            // create projection matrix: 60 FOV, square aspect,
+            // near plane 1, far plane 100
+            var matrix = [Matrix4x4.Perspective](Matrix4x4.Perspective.html)(60, 1, 1, 100);
+            // will print:
+            // 0.20000 0.00000  0.00000  0.00000
+            // 0.00000 0.20000  0.00000  0.00000
+            // 0.00000 0.00000 -0.02020 -1.02020
+            // 0.00000 0.00000  0.00000  1.00000
+            [Debug.Log](Debug.Log.html)("projection matrix\n" + matrix);  
+      
+            // get shader-compatible projection matrix value
+            var shaderMatrix = [GL.GetGPUProjectionMatrix](GL.GetGPUProjectionMatrix.html)(matrix, false);
+            // on a Direct3D-like graphics API, will print:
+            // 0.20000 0.00000 0.00000 0.00000
+            // 0.00000 0.20000 0.00000 0.00000
+            // 0.00000 0.00000 0.01010 1.01010
+            // 0.00000 0.00000 0.00000 1.00000
+            [Debug.Log](Debug.Log.html)("shader projection matrix\n" + shaderMatrix);
+        }
+    }
+    
+
+Additional resources: [Ortho](Matrix4x4.Ortho.html),
+[Camera.projectionMatrix](Camera-projectionMatrix.html),
+[GL.LoadPixelMatrix](GL.LoadPixelMatrix.html),
+[GL.LoadProjectionMatrix](GL.LoadProjectionMatrix.html),
+[GL.GetGPUProjectionMatrix](GL.GetGPUProjectionMatrix.html).
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

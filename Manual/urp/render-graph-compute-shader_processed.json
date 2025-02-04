@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\urp\\render-graph-compute-shader.html",
+  "chunks": [
+    "Unity - Manual: Compute shaders in the render graph system in URP Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Rendering Render pipelines Using the Universal Render Pipeline Custom rendering and post-processing in URP Render graph system in URP Compute shaders in the render graph system in URP Draw objects in the render graph system in URP Run a compute shader in a render pass in URP Compute shaders in the render graph system in URP To create a render pass that runs a compute shader A program that runs on the GPU. More info See in Glossary , use the render graph system. Page Description Run a compute shader in a render pass Create a render pass that allocates a buffer and runs a compute shader to output data into the buffer. Create input data for a compute shader Allocate a buffer that provides input data for a compute shader",
+    "in a render pass. Additional resources Compute shaders Writing shaders Draw objects in the render graph system in URP Run a compute shader in a render pass in URP Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

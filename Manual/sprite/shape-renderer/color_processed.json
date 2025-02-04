@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\sprite\\shape-renderer\\color.html",
+  "chunks": [
+    "Unity - Manual: Color Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Sprites Sprite shape renderer Color Sprite shape renderer Mask interaction Color The examples below show what happens when you change the RGB values on the Sprite A 2D graphic objects. If you are used to working in 3D, Sprites are essentially just standard textures but there are special techniques for combining and managing sprite textures for efficiency and convenience during development. More info See in Glossary Shape Renderer’s Color setting. To change a Sprite Shape’s opacity, change the value of the Alpha (A) channel, where lower values make the Sprite appear more transparent and higher values make the Sprite appear more opaque. Left: The original Sprite. Right: The Sprite with its RGB colors set to red. SpriteShapeRenderer",
+    "Sprite shape renderer Mask interaction Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

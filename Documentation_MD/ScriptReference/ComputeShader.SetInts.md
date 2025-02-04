@@ -1,0 +1,120 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [ComputeShader](ComputeShader.html).SetInts
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[Switch to Manual](../Manual/class-ComputeShader.html "Go to ComputeShader
+Component in the Manual")
+
+## Declaration
+
+public void SetInts(string name, params int[] values);
+
+## Declaration
+
+public void SetInts(int nameID, params int[] values);
+
+### Parameters
+
+name | Array variable name in the shader code.  
+---|---  
+nameID | Property name ID, use [Shader.PropertyToID](Shader.PropertyToID.html) to get it.  
+values | Value array to set.  
+  
+### Description
+
+Set multiple consecutive integer parameters at once.
+
+This function can be used to set int vector, int array or int vector array
+values. For example, int4 myArray[4] in the compute shader can be filled by
+passing 16 integers. See [Compute Shaders](../Manual/class-ComputeShader.html)
+for information on data layout rules and cross-platform compatibility.  
+  
+This API feeds raw data to the constant buffer, so the provided data must
+follow the HLSL constant buffer data layout rules. This means that the the
+array elements must be aligned on float4; for example, float4 data requires no
+padding, float3 data needs one float padding for each element, float2 data
+needs two floats, and so on.  
+  
+Constant buffers are shared between all kernels in a single compute shader
+asset. Therefore this function affects all kernels in this ComputeShader.  
+  
+Additional resources: [SetFloat](ComputeShader.SetFloat.html),
+[SetFloats](ComputeShader.SetFloats.html),
+[SetInt](ComputeShader.SetInt.html), [SetBool](ComputeShader.SetBool.html),
+[SetBuffer](ComputeShader.SetBuffer.html),
+[SetMatrix](ComputeShader.SetMatrix.html),
+[SetMatrixArray](ComputeShader.SetMatrixArray.html),
+[SetTexture](ComputeShader.SetTexture.html),
+[SetVector](ComputeShader.SetVector.html),
+[SetVectorArray](ComputeShader.SetVectorArray.html).
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

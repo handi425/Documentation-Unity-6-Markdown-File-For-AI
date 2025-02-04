@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\2d-physics\\joints\\target-joint-2d-landing.html",
+  "chunks": [
+    "Unity - Manual: Target Joint 2D Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity 2D Physics 2D joints Target Joint 2D Spring Joint 2D Target Joint 2D fundamentals Target Joint 2D Techniques and resources for working with Target Joint A physics component allowing a dynamic connection between Rigidbody components, usually allowing some degree of movement such as a hinge. More info See in Glossary 2D components. Page Description Target Joint 2D fundamentals Understand the Joint 2D component and how it’s used to connect to a specified target, rather than another Rigidbody A component that allows a GameObject to be affected by simulated gravity and other forces. More info See in Glossary object. Target Joint 2D component reference Explore the properties of the Target Joint 2D. Spring Joint 2D Target Joint",
+    "2D fundamentals Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

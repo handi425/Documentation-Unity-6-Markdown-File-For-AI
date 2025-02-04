@@ -1,0 +1,153 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# AsyncInstantiateOperation<T0>
+
+class in UnityEngine
+
+/
+
+Inherits from:[AsyncInstantiateOperation](AsyncInstantiateOperation.html)
+
+/
+
+Implemented in:[UnityEngine.CoreModule](UnityEngine.CoreModule.html)
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Provides a generic method to instantiate operations asynchronously on a
+UnityEngine.Object.
+
+The operation is returned by Object.InstantiateAsync.
+
+### Properties
+
+[Result](AsyncInstantiateOperation_1.Result.html)| If isDone is true, then
+Result contains instantiated objects of type T. The size of the array is the
+same as the 'count' argument for the InstantiateAsync method call.  
+---|---  
+  
+### Inherited Members
+
+### Properties
+
+[Result](AsyncInstantiateOperation.Result.html)| If isDone is true, then
+Result contains the instantiated objects. The size of the array is the same as
+the 'count' argument for the InstantiateAsync call.  
+---|---  
+[allowSceneActivation](AsyncOperation-allowSceneActivation.html)| Allow Scenes
+to be activated as soon as it is ready.  
+[isDone](AsyncOperation-isDone.html)| Has the operation finished? (Read Only)  
+[priority](AsyncOperation-priority.html)| Priority lets you tweak in which
+order async operation calls will be performed.  
+[progress](AsyncOperation-progress.html)| What's the operation's progress.
+(Read Only)  
+  
+### Public Methods
+
+[Cancel](AsyncInstantiateOperation.Cancel.html)| Method that cancels all the
+operations connected to the asynchronous instantiation if the operation is not
+done yet, that is, where isDone == false. This method deletes all the objects
+created so far, which are not visible to users while they're not activated,
+and stops all the internal jobs connected to the operation.  
+---|---  
+[IsWaitingForSceneActivation](AsyncInstantiateOperation.IsWaitingForSceneActivation.html)|
+This property can be true only if allowSceneActivation is set to false, and if
+the operation has already completed everything needed for object instantiation
+except for the main thread integrating the objects and calling their Awake
+methods. Users can set allowSceneActivation to true to trigger the activation
+or call the Cancel method to cancel instantiation.  
+[WaitForCompletion](AsyncInstantiateOperation.WaitForCompletion.html)| Blocks
+the current thread until this operation is done.  
+  
+### Static Methods
+
+[GetIntegrationTimeMS](AsyncInstantiateOperation.GetIntegrationTimeMS.html)|
+Gets the target duration allowed per frame to integrate instantiated object
+operations, in milliseconds.  
+---|---  
+[SetIntegrationTimeMS](AsyncInstantiateOperation.SetIntegrationTimeMS.html)|
+Sets the target duration allowed per frame to integrate instantiated object
+operations, in milliseconds.  
+  
+### Events
+
+[completed](AsyncOperation-completed.html)| Event that is invoked upon
+operation completion. An event handler that is registered in the same frame as
+the call that creates it will be invoked next frame, even if the operation is
+able to complete synchronously. If a handler is registered after the operation
+has completed and has already invoked the complete event, the handler will be
+called synchronously.  
+---|---  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

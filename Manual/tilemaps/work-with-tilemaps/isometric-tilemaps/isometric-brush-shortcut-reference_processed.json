@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\tilemaps\\work-with-tilemaps\\isometric-tilemaps\\isometric-brush-shortcut-reference.html",
+  "chunks": [
+    "Unity - Manual: Isometric brush shortcut Reference Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Tilemaps in Unity Work with tilemaps Isometric tilemaps in Unity Isometric brush shortcut Reference Isometric scriptable brush methods Tilemap Collider 2D Isometric brush shortcut Reference There are some keyboard shortcuts that are specific to when you work with tile palette brushes on an Isometric Z as Y Tilemap A GameObject that allows you to quickly create 2D levels using tiles and a grid overlay. More info See in Glossary . With the Tile brush selected, use the following shortcut keys to quickly switch to different Z positions. Shortcut key Command - Increase Z position by 1. = Decrease Z position by 1. Isometric scriptable brush methods Tilemap Collider 2D Copyright ©2005-2025 Unity Technologies.",
+    "All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

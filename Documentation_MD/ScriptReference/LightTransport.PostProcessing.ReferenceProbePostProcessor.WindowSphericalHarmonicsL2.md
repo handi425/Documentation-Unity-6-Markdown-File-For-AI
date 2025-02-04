@@ -1,0 +1,108 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#
+[ReferenceProbePostProcessor](LightTransport.PostProcessing.ReferenceProbePostProcessor.html).WindowSphericalHarmonicsL2
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+## Declaration
+
+public bool
+WindowSphericalHarmonicsL2([LightTransport.IDeviceContext](LightTransport.IDeviceContext.html)
+context, BufferSlice<SphericalHarmonicsL2> shIn,
+BufferSlice<SphericalHarmonicsL2> shOut, int probeCount);
+
+### Parameters
+
+context | Device context.  
+---|---  
+shIn | Source buffer of irradiance light probes encoded as SphericalHarmonicsL2.  
+shOut | Destination buffer of the windowed spherical irradiance encoded as SphericalHarmonicsL2.  
+probeCount | Number of SphericalHarmonicsL2 probes to window.  
+  
+### Returns
+
+**bool** True if the operation was successfully added to the command queue on
+the context.
+
+### Description
+
+Apply a windowing operation on an array of
+[SphericalHarmonicsL2](Rendering.SphericalHarmonicsL2.html) probes.
+
+Ringing is an artifact that can occur on light probes if they are subject to
+drastic changes in lighting. Light may overshoot and appear in the opposite
+end of the probe. This method is useful to reduce the artifact and its
+suggested use is to apply it on the direct part of the lighting before
+combining it with the indirect contribution.
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

@@ -1,0 +1,367 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#
+[IProfilerFrameTimeViewSampleSelectionController](Profiling.IProfilerFrameTimeViewSampleSelectionController.html).SetSelection
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+## Declaration
+
+public bool
+SetSelection([Profiling.ProfilerTimeSampleSelection](Profiling.ProfilerTimeSampleSelection.html)
+selection);
+
+### Parameters
+
+selection | A fully described selection created via a the [ProfilerTimeSampleSelection](Profiling.ProfilerTimeSampleSelection.html) constructor or previously retrieved via ProfilerWindow.selection.  
+---|---  
+  
+### Returns
+
+**bool** Returns true if the selection was successfully set, false if it was
+rejected because no fitting sample could be found.
+
+### Description
+
+Set the current selection in a frame time sample based Profiler Module, such
+as the [CPU Usage module](../Manual/ProfilerCPU.html) and the [GPU Usage
+Profiler module](../Manual/ProfilerGPU.html).
+
+If you don't know the rawSampleIndex of the sample you want to select, you can
+use either [RawFrameDataView](Profiling.RawFrameDataView.html) or the
+extension methods
+[ProfilerEditorUtility.SetSelection](Profiling.ProfilerEditorUtility.SetSelection.html)
+to find it. This extension method searches for a sample by its name or
+Profiler Marker ID, the frame and the thread it occurred in, and optionally a
+sample stack where it should be found.  
+  
+When no frame data is available in the Profiler Window, Unity throws an
+Exception. You can check that
+[ProfilerWindow.firstAvailableFrameIndex](ProfilerWindow-
+firstAvailableFrameIndex.html) is greater or equal to 0 to validate that frame
+data is available.  
+  
+When the frame index of the selection is outside of the range described by
+[ProfilerWindow.firstAvailableFrameIndex](ProfilerWindow-
+firstAvailableFrameIndex.html) and
+[ProfilerWindow.lastAvailableFrameIndex](ProfilerWindow-
+lastAvailableFrameIndex.html), Unity throws an ArgumentOutOfRangeException.  
+  
+When the thread the selection object refers to cannot be found, Unity throws
+an ArgumentException.  
+  
+Additional resources:
+[ProfilerEditorUtility.SetSelection](Profiling.ProfilerEditorUtility.SetSelection.html)
+and
+[IProfilerFrameTimeViewSampleSelectionController.ClearSelection](Profiling.IProfilerFrameTimeViewSampleSelectionController.ClearSelection.html).
+
+    
+    
+    using [System](Rendering.VirtualTexturing.System.html);
+    using System.Collections.Generic;
+    using [UnityEditor](UnityEditor.html);
+    using UnityEditor.Profiling;
+    using UnityEditorInternal;
+    using UnityEngine;  
+      
+    // This example assumes the profiled scene contained a component of MyScript.cs:
+    /* using UnityEngine;  
+      
+    public class MyScript : [MonoBehaviour](MonoBehaviour.html)
+    {
+        void [Update](PlayerLoop.Update.html)()
+        {
+            MethodWithABoxingAllocation();
+        }  
+      
+        object MethodWithABoxingAllocation()
+        {
+            return 1;
+        }
+    }*/  
+      
+    public class Example : [EditorWindow](EditorWindow.html)
+    {
+        const string k_MainThreadGroupName = "";
+        const string k_MainThreadName = "Main Thread";
+        const string k_GCAllocSampleName = "GC.Alloc";
+        // [Profiler](Profiling.Profiler.html) samples that were instrumented by Unity's [Message](VersionControl.Message.html) Invoking mechanism,
+        // e.g. [Update](PlayerLoop.Update.html)(), Start(), [FixedUpdate](PlayerLoop.FixedUpdate.html)() ... get an " [Invoke]" postfix
+        const string k_InvokePostFix = " [Invoke]";
+        public enum UpdateNameMatchType
+        {
+            Short,
+            Full,
+        }  
+      
+        [ProfilerWindow](ProfilerWindow.html) m_Profiler = null;
+        UpdateNameMatchType m_UpdateNameMatchType = UpdateNameMatchType.Short;
+        bool m_UseMarkerNames = true;  
+      
+        string GetUpdateSampleName(UpdateNameMatchType updateNameMatchType, bool deepProfiling)
+        {
+            switch (updateNameMatchType)
+            {
+                case UpdateNameMatchType.Short:
+                    if (deepProfiling)
+                        return k_UpdateSampleNameShort;
+                    return k_UpdateSampleNameShort + k_InvokePostFix;
+                case UpdateNameMatchType.Full:
+                    if (deepProfiling)
+                        return k_UpdateSampleNameFull;  
+      
+                    return k_UpdateSampleNameFull + k_InvokePostFix;
+                default:
+                    throw new NotImplementedException();
+            }
+        }  
+      
+        const string k_UpdateSampleNameFull = "[Assembly](Compilation.Assembly.html)-CSharp.dll!::MyScript.Update()";
+        // Invoked method samples or samples instrumented via Deep Profiling will by default be shown
+        // without their fully qualifying type name as above
+        // Instead the [Profiler](Profiling.Profiler.html) UI will strip out everything before the '!::' part of their name.
+        // SetSelection will still find these samples, if the UI is set to not Show Full Scripting Method Names
+        // Note that [RawFrameDataView](Profiling.RawFrameDataView.html) and [HierarchyFrameDataView](Profiling.HierarchyFrameDataView.html) will not be able to identify the Marker IDs
+        // for such samples from this shorter name.
+        const string k_UpdateSampleNameShort = "MyScript.Update()";  
+      
+        static readonly List<string> k_SampleNames = new List<string>
+        {
+            "[PlayerLoop](LowLevel.PlayerLoop.html)",
+            "Update.ScriptRunBehaviourUpdate",
+            "BehaviourUpdate",
+        };  
+      
+        [[MenuItem](MenuItem.html)("Window/Analysis/[Profiler](Profiling.Profiler.html) Extension")]
+        public static void ShowExampleWindow()
+        {
+            var window = GetWindow<Example>();
+            window.m_Profiler = [EditorWindow.GetWindow](EditorWindow.GetWindow.html)<[ProfilerWindow](ProfilerWindow.html)>();
+        }  
+      
+        void OnGUI()
+        {
+            // First make sure there is an open [Profiler](Profiling.Profiler.html) Window
+            if (m_Profiler == null)
+                m_Profiler = [EditorWindow.GetWindow](EditorWindow.GetWindow.html)<[ProfilerWindow](ProfilerWindow.html)>();  
+      
+            // For demonstration purposes, let the user choose if the names or if Marker IDs should be used.
+            m_UseMarkerNames = [GUILayout.Toggle](GUILayout.Toggle.html)(m_UseMarkerNames, "Use Marker names instead of IDs");
+            if (!m_UseMarkerNames)
+                m_UpdateNameMatchType = UpdateNameMatchType.Full;  
+      
+            // Marker IDs need to be gotten from the fully qualified type name, so the shorter name is not an option when using IDs
+            using (new [EditorGUI.DisabledScope](EditorGUI.DisabledScope.html)(!m_UseMarkerNames))
+            {
+                // For demonstration purposes, let the user choose if the short or the long name should be used.
+                m_UpdateNameMatchType = (UpdateNameMatchType)[EditorGUILayout.EnumPopup](EditorGUILayout.EnumPopup.html)(m_UpdateNameMatchType);
+            }  
+      
+            // If the currently selected Module is not the CPU Usage module, setting the selection will not be visible to the user immediately
+            if (m_Profiler.selectedModuleIdentifier == [ProfilerWindow.cpuModuleIdentifier](ProfilerWindow-cpuModuleIdentifier.html))
+            {
+                // Get the CPU Usage [Profiler](Profiling.Profiler.html) module's selection controller interface to interact with the selection
+                var cpuSampleSelectionController = m_Profiler.GetFrameTimeViewSampleSelectionController([ProfilerWindow.cpuModuleIdentifier](ProfilerWindow-cpuModuleIdentifier.html));
+                // If the current selection object is null, there is no selection to print out.
+                using (new [EditorGUI.DisabledScope](EditorGUI.DisabledScope.html)(m_Profiler.lastAvailableFrameIndex < 0))
+                {
+                    if ([GUILayout.Button](GUILayout.Button.html)("Check my Script for GC.Alloc"))
+                    {
+                        string samplePath = "";
+                        for (int i = 0; i < k_SampleNames.Count; i++)
+                        {
+                            samplePath += $"{k_SampleNames[i]}/";
+                        }  
+      
+                        var samplePathDeepProfiling = samplePath + $"{GetUpdateSampleName(m_UpdateNameMatchType, true)}/";
+                        samplePath = samplePath + $"{GetUpdateSampleName(m_UpdateNameMatchType, false)}/";
+                        // the sample we are looking for, without a trailing '/'
+                        samplePath += k_GCAllocSampleName;
+                        samplePathDeepProfiling += k_GCAllocSampleName;  
+      
+                        // This check will fail in Deep Profiling because "MethodWithABoxingAllocation()" will be instrumented
+                        // and sitting in the sample stack between "[Update](PlayerLoop.Update.html)()" and the "GC.Alloc".
+                        if (cpuSampleSelectionController.SetSelection(samplePath) || cpuSampleSelectionController.SetSelection(samplePathDeepProfiling))
+                        {
+                            [Debug.LogWarning](Debug.LogWarning.html)("MyScript allocates in its [Update](PlayerLoop.Update.html) loop");
+                        }
+                        else
+                        {
+                            if (m_UseMarkerNames)
+                            {
+                                samplePath = "";
+                                for (int i = 0; i < k_SampleNames.Count; i++)
+                                {
+                                    samplePath += $"{k_SampleNames[i]}{ (i < k_SampleNames.Count - 1 ?"/": "")}";
+                                }
+                                // SetSelection calls that take sample names as strings will find shortened scripting sample names
+                                var mySctiprSamplePathDeepProfiling = $"{samplePath}/{GetUpdateSampleName(m_UpdateNameMatchType, true)}";
+                                var myScriptSamplePath = $"{samplePath}/{GetUpdateSampleName(m_UpdateNameMatchType, false)}";  
+      
+                                if (cpuSampleSelectionController.SetSelection(m_Profiler.selectedFrameIndex,
+                                    k_MainThreadGroupName, k_MainThreadName, k_GCAllocSampleName, myScriptSamplePath) ||
+                                    cpuSampleSelectionController.SetSelection(m_Profiler.selectedFrameIndex,
+                                        k_MainThreadGroupName, k_MainThreadName, k_GCAllocSampleName, mySctiprSamplePathDeepProfiling))
+                                {
+                                    [Debug.LogWarning](Debug.LogWarning.html)("MyScript allocates in its [Update](PlayerLoop.Update.html) loop");
+                                }
+                                // MyScript did not have a GC.Alloc sample underneath it, but maybe a different [Update](PlayerLoop.Update.html) sample allocated
+                                // Search through all [Update](PlayerLoop.Update.html)() samples
+                                else if (cpuSampleSelectionController.SetSelection(m_Profiler.selectedFrameIndex,
+                                    k_MainThreadGroupName, k_MainThreadName, k_GCAllocSampleName, samplePath))
+                                {
+                                    [Debug.LogWarning](Debug.LogWarning.html)($"MyScript does not allocate but {cpuSampleSelectionController.selection.markerNamePath[k_SampleNames.Count]} allocates in its [Update](PlayerLoop.Update.html) loop");
+                                }
+                                else
+                                {
+                                    [Debug.Log](Debug.Log.html)("No Script is allocating in its [Update](PlayerLoop.Update.html) Loop");
+                                    FindAnyGCAllocSample(cpuSampleSelectionController);
+                                }
+                            }
+                            else
+                            {
+                                List<int> markerIdPath = new List<int>(k_SampleNames.Count + 1);
+                                List<int> deepProfilingmarkerIdPath = new List<int>(k_SampleNames.Count + 1);
+                                int gcAllocMarkerId = [FrameDataView.invalidMarkerId](Profiling.FrameDataView-invalidMarkerId.html);
+                                using (var frameData = ProfilerDriver.GetRawFrameDataView((int)m_Profiler.selectedFrameIndex, 0))
+                                {
+                                    for (int i = 0; i < k_SampleNames.Count; i++)
+                                    {
+                                        markerIdPath.Add(frameData.GetMarkerId(k_SampleNames[i]));
+                                    }
+                                    deepProfilingmarkerIdPath.AddRange(markerIdPath);
+                                    // GetMarkerId needs the full length marker name to be able to identify this sample.
+                                    markerIdPath.Add(frameData.GetMarkerId(GetUpdateSampleName(UpdateNameMatchType.Full, false)));
+                                    deepProfilingmarkerIdPath.Add(frameData.GetMarkerId(GetUpdateSampleName(UpdateNameMatchType.Full, true)));  
+      
+                                    gcAllocMarkerId = frameData.GetMarkerId(k_GCAllocSampleName);
+                                }  
+      
+                                if (cpuSampleSelectionController.SetSelection(m_Profiler.selectedFrameIndex,
+                                    k_MainThreadGroupName, k_MainThreadName, gcAllocMarkerId, markerIdPath) ||
+                                    cpuSampleSelectionController.SetSelection(m_Profiler.selectedFrameIndex,
+                                        k_MainThreadGroupName, k_MainThreadName, gcAllocMarkerId, deepProfilingmarkerIdPath))
+                                {
+                                    [Debug.LogWarning](Debug.LogWarning.html)("MyScript allocates in its [Update](PlayerLoop.Update.html) loop");
+                                }
+                                else
+                                {
+                                    // MyScript did not have a GC.Alloc sample underneath it, but maybe a different [Update](PlayerLoop.Update.html) sample allocated
+                                    // Remove the MyScript sample id from the path and search through all [Update](PlayerLoop.Update.html)() samples
+                                    markerIdPath.Remove(markerIdPath.Count - 1);
+                                    if (cpuSampleSelectionController.SetSelection(m_Profiler.selectedFrameIndex,
+                                        k_MainThreadGroupName, k_MainThreadName,
+                                        gcAllocMarkerId, markerIdPath))
+                                    {
+                                        [Debug.LogWarning](Debug.LogWarning.html)($"MyScript does not allocate but {cpuSampleSelectionController.selection.markerNamePath[k_SampleNames.Count]} allocates in its [Update](PlayerLoop.Update.html) loop");
+                                        return;
+                                    }
+                                    [Debug.Log](Debug.Log.html)("No Script is allocating in its [Update](PlayerLoop.Update.html) Loop");
+                                    FindAnyGCAllocSample(cpuSampleSelectionController);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }  
+      
+        void FindAnyGCAllocSample([IProfilerFrameTimeViewSampleSelectionController](Profiling.IProfilerFrameTimeViewSampleSelectionController.html) cpuSampleSelectionController)
+        {
+            using (var frameData = ProfilerDriver.GetRawFrameDataView((int)m_Profiler.selectedFrameIndex, 0))
+            {
+                var gcAllocMarkerId = frameData.GetMarkerId(k_GCAllocSampleName);
+                for (int i = 0; i < frameData.sampleCount; i++)
+                {
+                    if (frameData.GetSampleMarkerId(i) == gcAllocMarkerId)
+                    {
+                        var selection = new [ProfilerTimeSampleSelection](Profiling.ProfilerTimeSampleSelection.html)(m_Profiler.selectedFrameIndex, k_MainThreadGroupName,
+                            k_MainThreadName, frameData.threadId, i);
+                        if (cpuSampleSelectionController.SetSelection(selection))
+                        {
+                            // do not use the selection object here. The CPU [Profiler](Profiling.Profiler.html) Module created a new one.
+                            // Instead Get the selection object from the [Profiler](Profiling.Profiler.html)
+                            [Debug.LogWarning](Debug.LogWarning.html)($"MyScript does not allocate but {cpuSampleSelectionController.selection.markerNamePath[k_SampleNames.Count]} allocates in its [Update](PlayerLoop.Update.html) loop");
+                            return;
+                        }
+                    }
+                }
+                [Debug.Log](Debug.Log.html)("No Script is allocating anything");
+            }
+        }
+    }
+    
+
+This example shows all major variations of SetSelection and showcases their
+differences.
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

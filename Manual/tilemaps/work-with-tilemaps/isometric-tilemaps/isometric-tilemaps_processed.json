@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\tilemaps\\work-with-tilemaps\\isometric-tilemaps\\isometric-tilemaps.html",
+  "chunks": [
+    "Unity - Manual: Isometric tilemaps Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Tilemaps in Unity Work with tilemaps Isometric tilemaps in Unity Isometric tilemaps Isometric tilemaps in Unity Isometric tilemap grid cells Isometric tilemaps In addition to Rectangular Tilemaps and Hexagonal Tilemaps , Unity enables you to create Isometric Tilemaps . The isometric perspective displays all three X, Y, and Z axes, so you can add pseudo-depth and height to a Tilemap A GameObject that allows you to quickly create 2D levels using tiles and a grid overlay. More info See in Glossary . Isometric tilemaps are popular in strategy games, as the isometric perspective allows you to simulate 3D gameplay elements such as different elevations and line-of-sight. This lets players make tactical decisions regarding",
+    "movement and positioning during gameplay. Isometric tilemaps in Unity Isometric tilemap grid cells Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

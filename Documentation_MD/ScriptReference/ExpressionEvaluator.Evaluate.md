@@ -1,0 +1,130 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [ExpressionEvaluator](ExpressionEvaluator.html).Evaluate
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+## Declaration
+
+public static bool Evaluate(string expression, out T value);
+
+### Parameters
+
+expression | A string containing a mathematical expression (e.g. "4+3").  
+---|---  
+value | The result of the expression evaluation. Supported types are: `int`, `float`, `long`, `double`.  
+  
+### Returns
+
+**bool** Indicates whether expression could be evauated successfully.
+
+### Description
+
+Evaluates a math expression and returns the result.
+
+The expressions that can be evaluated support:
+
+  * arithmetic operators `a+b`, `a-b`, `a*b`, `a/b`,
+  * power (`a^b`) and modulo (`a%b`) operators,
+  * parentheses,
+  * math functions `sqrt(a)`, `floor(a)`, `ceil(a)`, `round(a)`,
+  * trigonometic functions `cos(a)`, `sin(a)`, `tan(a)` (argument expressed in radians), and a constant `pi`.
+
+If the expression can not be evaluated, the function returns `false` and the
+result value is set to zero.
+
+    
+    
+    using [UnityEditor](UnityEditor.html);
+    using UnityEngine;  
+      
+    public class ExampleScript : [MonoBehaviour](MonoBehaviour.html)
+    {
+        [[MenuItem](MenuItem.html)("Example/Int Expression")]
+        public static void IntExample()
+        {
+            [ExpressionEvaluator.Evaluate](ExpressionEvaluator.Evaluate.html)("2+3", out int result);
+            // prints 5
+            [Debug.Log](Debug.Log.html)(result);
+        }  
+      
+        [[MenuItem](MenuItem.html)("Example/Float Expression")]
+        public static void FloatExample()
+        {
+            [ExpressionEvaluator.Evaluate](ExpressionEvaluator.Evaluate.html)("sqrt(cos(pi/3))", out float result);
+            // prints 0.7071068
+            [Debug.Log](Debug.Log.html)(result);
+        }
+    }
+    
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

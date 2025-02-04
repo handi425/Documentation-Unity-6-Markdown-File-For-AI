@@ -1,0 +1,114 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [Mesh.MeshDataArray](Mesh.MeshDataArray.html).Dispose
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[Switch to Manual](../Manual/class-Mesh.html "Go to Mesh Component in the
+Manual")
+
+## Declaration
+
+public void Dispose();
+
+### Description
+
+Use this method to dispose of the `MeshDataArray` struct.
+
+It is important to dispose of a `MeshDataArray` struct once you have finished
+working with it. Modifying a Mesh while a `MeshDataArray` struct for that Mesh
+exists results in memory allocations and data copies. Use
+[Dispose](Mesh.MeshDataArray.Dispose.html) to dispose of the `MeshDataArray`
+struct when you have finished using it, or use the C# `using` pattern to do
+this automatically:
+
+    
+    
+    using Unity.Collections;
+    using UnityEngine;
+    public class ExampleScript : [MonoBehaviour](MonoBehaviour.html)
+    {
+        void Start()
+        {
+            var mesh = new [Mesh](Mesh.html)();
+            mesh.vertices = new[] {[Vector3.one](Vector3-one.html), [Vector3.zero](Vector3-zero.html)};
+            using (var dataArray = [Mesh.AcquireReadOnlyMeshData](Mesh.AcquireReadOnlyMeshData.html)(mesh))
+            {
+                // prints "2"
+                [Debug.Log](Debug.Log.html)(dataArray[0].vertexCount);
+            }
+        }
+    }
+    
+
+Additional resources:
+[Mesh.AcquireReadOnlyMeshData](Mesh.AcquireReadOnlyMeshData.html).
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

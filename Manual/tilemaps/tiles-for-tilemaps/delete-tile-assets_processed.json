@@ -1,0 +1,7 @@
+{
+  "path": "docManual\\tilemaps\\tiles-for-tilemaps\\delete-tile-assets.html",
+  "chunks": [
+    "Unity - Manual: Delete tile assets Manual Scripting API unity.com Version: Unity 6 (6000.0) Supported Legacy Language : English English 中文 日本語 한국어 Unity Manual Version: Unity 6 Select a different version Language : English English 中文 日本語 한국어 Working in Unity 2D in Unity Tilemaps in Unity Tiles for tilemaps Delete tile assets Create tile assets Scriptable Tile assets Delete tile assets When you delete tile assets in their save location, the Tile Palette editor replaces them with placeholder tiles in the tile palette and tilemaps A GameObject that allows you to quickly create 2D levels using tiles and a grid overlay. More info See in Glossary . Each deleted tile asset has a corresponding placeholder tile with a unique shade of pink that differentiates the placeholders from each other. On the tilemap, these placeholder tiles remain in the original position of the deleted tiles. This helps you to identify the deleted tile assets and the areas on the tilemaps they affect. A tile palette",
+    "with orange, black, and white tiles. The same tile palette after the orange and white tile assets are deleted. Create tile assets Scriptable Tile assets Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from 6000.0.36f1 (02b661dc617c). Built on: 2025-01-14. Tutorials Community Answers Knowledge Base Forums Asset Store Terms of use Legal Privacy Policy Cookies Do Not Sell or Share My Personal Information Your Privacy Choices (Cookie Settings)"
+  ]
+}

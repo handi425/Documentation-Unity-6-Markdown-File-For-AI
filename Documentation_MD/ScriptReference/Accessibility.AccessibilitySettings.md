@@ -1,0 +1,120 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+# AccessibilitySettings
+
+class in UnityEngine.Accessibility
+
+/
+
+Implemented
+in:[UnityEngine.AccessibilityModule](UnityEngine.AccessibilityModule.html)
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+### Description
+
+Provides access to the accessibility settings for the current platform.
+
+The currently supported platforms are:
+
+  * [RuntimePlatform.Android](RuntimePlatform.Android.html)
+  * [RuntimePlatform.IPhonePlayer](RuntimePlatform.IPhonePlayer.html)
+
+This class also provides events that are invoked when the user changes
+accessibility settings.
+
+### Static Properties
+
+[fontScale](Accessibility.AccessibilitySettings-fontScale.html)|  Gets the
+font scale set by the user in the system settings.  
+---|---  
+[isBoldTextEnabled](Accessibility.AccessibilitySettings-
+isBoldTextEnabled.html)|  Checks whether or not bold text is enabled in the
+system settings.  
+[isClosedCaptioningEnabled](Accessibility.AccessibilitySettings-
+isClosedCaptioningEnabled.html)|  Checks whether or not closed captioning is
+enabled in the system settings.  
+  
+### Events
+
+[boldTextStatusChanged](Accessibility.AccessibilitySettings-
+boldTextStatusChanged.html)|  Event that is invoked on the main thread when
+the user changes the bold text setting in the system settings.  
+---|---  
+[closedCaptioningStatusChanged](Accessibility.AccessibilitySettings-
+closedCaptioningStatusChanged.html)|  Event that is invoked on the main thread
+when the user changes the closed captioning setting in the system settings.  
+[fontScaleChanged](Accessibility.AccessibilitySettings-fontScaleChanged.html)|
+Event that is invoked on the main thread when the user changes the font scale
+in the system settings.  
+  
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+

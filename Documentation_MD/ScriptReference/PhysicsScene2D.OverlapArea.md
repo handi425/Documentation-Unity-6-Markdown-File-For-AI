@@ -1,0 +1,219 @@
+[ ]()
+
+  * [Manual](../Manual/index.html)
+  * [Scripting API](../ScriptReference/index.html)
+
+  * [unity.com](https://unity.com/)
+
+Version: **Unity 6** (6000.0)
+
+  * Supported
+  * Legacy
+
+LanguageEnglish
+
+  * [English]()
+
+  * C#
+
+[ ](https://docs.unity3d.com)
+
+## Scripting API
+
+Version: Unity 6 Select a different version
+
+LanguageEnglish
+
+  * [English]()
+
+#  [PhysicsScene2D](PhysicsScene2D.html).OverlapArea
+
+Leave feedback
+
+Suggest a change
+
+## Success!
+
+Thank you for helping us improve the quality of Unity Documentation. Although
+we cannot accept all submissions, we do read each suggested change from our
+users and will make updates where applicable.
+
+Close
+
+## Submission failed
+
+For some reason your suggested change could not be submitted. Please <a>try
+again</a> in a few minutes. And thank you for taking the time to help us
+improve the quality of Unity Documentation.
+
+Close
+
+Your name Your email Suggestion* Submit suggestion
+
+Cancel
+
+[ ]()
+
+## Declaration
+
+public [Collider2D](Collider2D.html) OverlapArea([Vector2](Vector2.html)
+pointA, [Vector2](Vector2.html) pointB, int layerMask =
+Physics2D.DefaultRaycastLayers);
+
+## Declaration
+
+public [Collider2D](Collider2D.html) OverlapArea([Vector2](Vector2.html)
+pointA, [Vector2](Vector2.html) pointB,
+[ContactFilter2D](ContactFilter2D.html) contactFilter);
+
+### Parameters
+
+pointA | One corner of the rectangle.  
+---|---  
+pointB | The corner of the rectangle diagonally opposite the pointA corner.  
+layerMask | Filter to check objects only on specific layers.  
+contactFilter | The contact filter used to filter the results differently, such as by layer mask and Z depth. Note that the normal angle is not used for overlap testing.  
+  
+### Returns
+
+**Collider2D** The collider overlapping the area.
+
+### Description
+
+Checks an area (non-rotated box) against Colliders in the PhysicsScene2D,
+returning the first intersection only.
+
+An "OverlapArea" is conceptually like looking at the Scene through a
+rectangular shape to determine what can be seen. Any
+[Collider2D](Collider2D.html) seen can be detected and reported.  
+  
+This function returns a [Collider2D](Collider2D.html) that overlaps the area
+or NULL if nothing overlaps.  
+  
+The _layerMask_ can be used to detect objects selectively only on certain
+layers (this allows you to apply the detection only to enemy characters, for
+example). Overloads of this method that use `contactFilter` can filter the
+results by the options available in [ContactFilter2D](ContactFilter2D.html).  
+  
+Additional resources: [PhysicsScene2D](PhysicsScene2D.html),
+[LayerMask](LayerMask.html),
+[Physics2D.DefaultRaycastLayers](Physics2D.DefaultRaycastLayers.html),
+[Physics2D.IgnoreRaycastLayer](Physics2D.IgnoreRaycastLayer.html),
+[Physics2D.queriesHitTriggers](Physics2D-queriesHitTriggers.html).
+
+* * *
+
+## Declaration
+
+public int OverlapArea([Vector2](Vector2.html) pointA, [Vector2](Vector2.html)
+pointB, Collider2D[] results, int layerMask = Physics2D.DefaultRaycastLayers);
+
+## Declaration
+
+public int OverlapArea([Vector2](Vector2.html) pointA, [Vector2](Vector2.html)
+pointB, [ContactFilter2D](ContactFilter2D.html) contactFilter, Collider2D[]
+results);
+
+### Parameters
+
+pointA | One corner of the rectangle.  
+---|---  
+pointB | The corner of the rectangle diagonally opposite the pointA corner.  
+results | The array to receive results. The size of the array determines the maximum number of results that can be returned.  
+layerMask | Filter to check objects only on specific layers.  
+contactFilter | The contact filter used to filter the results differently, such as by layer mask and Z depth. Note that the normal angle is not used for overlap testing.  
+  
+### Returns
+
+**int** Returns the number of results placed in the `results` array.
+
+### Description
+
+Checks an area (non-rotated box) against Colliders in the PhysicsScene2D,
+returning all intersections.
+
+An "OverlapArea" is conceptually like looking at the Scene through a
+rectangular shape to determine what can be seen. Any
+[Collider2D](Collider2D.html) seen can be detected and reported.  
+  
+This function returns an array of [Collider2D](Collider2D.html) that overlap
+the area.  
+  
+The integer return value is the number of objects that intersect the area
+(possibly zero) but the results array will not be resized if it doesn't
+contain enough elements to report all the results. The significance of this is
+that no memory is allocated for the results and so garbage collection
+performance is improved. Note that you will always get zero results if you
+pass an empty array.  
+  
+The _layerMask_ can be used to detect objects selectively only on certain
+layers (this allows you to apply the detection only to enemy characters, for
+example). Overloads of this method that use `contactFilter` can filter the
+results by the options available in [ContactFilter2D](ContactFilter2D.html).  
+  
+Additional resources: [PhysicsScene2D](PhysicsScene2D.html),
+[LayerMask](LayerMask.html),
+[Physics2D.DefaultRaycastLayers](Physics2D.DefaultRaycastLayers.html),
+[Physics2D.IgnoreRaycastLayer](Physics2D.IgnoreRaycastLayer.html),
+[Physics2D.queriesHitTriggers](Physics2D-queriesHitTriggers.html).
+
+* * *
+
+## Declaration
+
+public int OverlapArea([Vector2](Vector2.html) pointA, [Vector2](Vector2.html)
+pointB, [ContactFilter2D](ContactFilter2D.html) contactFilter,
+List<Collider2D> results);
+
+### Parameters
+
+pointA | One corner of the rectangle.  
+---|---  
+pointB | The corner of the rectangle diagonally opposite the pointA corner.  
+contactFilter | The contact filter used to filter the results differently, such as by layer mask and Z depth. Note that the normal angle is not used for overlap testing.  
+results | The list to receive results.  
+  
+### Returns
+
+**int** Returns the number of results placed in the `results` list.
+
+### Description
+
+Checks an area (non-rotated box) against Colliders in the PhysicsScene2D,
+returning all intersections.
+
+An "OverlapArea" is conceptually like looking at the Scene through a
+rectangular shape to determine what can be seen. Any
+[Collider2D](Collider2D.html) seen can be detected and reported.  
+  
+This function returns a list of [Collider2D](Collider2D.html) that overlap the
+area.  
+  
+The integer return value is the number of results written into the `results`
+list. The results list will be resized if it doesn't contain enough elements
+to report all the results. This prevents memory from being allocated for
+results when the `results` list does not need to be resized, and improves
+garbage collection performance when the query is performed frequently.  
+  
+The results can also be filtered by the `contactFilter`.
+
+Is something described here not working as you expect it to? It might be a
+**Known Issue**. Please check with the Issue Tracker at
+[issuetracker.unity3d.com](https://issuetracker.unity3d.com).
+
+Copyright ©2005-2025 Unity Technologies. All rights reserved. Built from:
+6000.0.36f1 (02b661dc617c). Built on: 2025-01-14.
+
+[Tutorials](https://unity3d.com/learn) [Community
+Answers](https://answers.unity3d.com) [Knowledge
+Base](https://support.unity3d.com/hc/en-us)
+[Forums](https://forum.unity3d.com) [Asset Store](https://unity3d.com/asset-
+store) [Terms of use](https://docs.unity3d.com/Manual/TermsOfUse.html)
+[Legal](https://unity.com/legal) [Privacy
+Policy](https://unity.com/legal/privacy-policy)
+[Cookies](https://unity.com/legal/cookie-policy) [Do Not Sell or Share My
+Personal Information](https://unity.com/legal/do-not-sell-my-personal-
+information)
+
+[Your Privacy Choices (Cookie Settings)](javascript:void\(0\);)
+
